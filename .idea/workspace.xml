@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nza/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nza/migrations/0002_photo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/req.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ACER/Eng_App/english_backend/english_backend",
+    "last_opened_file_path": "C:/Users/ACER/Book",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,7 +86,13 @@
       <updated>1689600658507</updated>
       <workItem from="1689600659671" duration="371000" />
       <workItem from="1689601086998" duration="1322000" />
-      <workItem from="1689602462026" duration="1201000" />
+      <workItem from="1689602462026" duration="2801000" />
+      <workItem from="1689685935034" duration="314000" />
+      <workItem from="1689688649115" duration="17000" />
+      <workItem from="1689789154160" duration="90000" />
+      <workItem from="1689852760793" duration="151000" />
+      <workItem from="1689852938994" duration="299000" />
+      <workItem from="1689853258105" duration="1421000" />
     </task>
     <servers />
   </component>
