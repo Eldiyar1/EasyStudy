@@ -6,3 +6,4 @@ from .models import *
 
 admin.site.register(Quote)
 admin.site.register(Idiom)
+
