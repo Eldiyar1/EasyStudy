@@ -1,10 +1,14 @@
 from random import choice
+
+from rest_framework import generics
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import Response, APIView
 from .models import *
-from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, SynonymSerializer, PhotoSerializer
+from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, SynonymSerializer, PhotoSerializer, \
+    GrammarSerializers
 from nltk.corpus import wordnet
 import requests
+
 
 # Create your views here.
 
@@ -97,3 +101,8 @@ class PhotoSearchView(APIView):
             return Response(serializer.data)
 
         return Response(serializer.errors)
+
+
+class GrammarViewSet(ModelViewSet):
+    queryset = Grammar.objects.all()
+    serializer_class = GrammarSerializers

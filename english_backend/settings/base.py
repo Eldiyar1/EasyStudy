@@ -1,7 +1,7 @@
 from pathlib import Path
-
+from .jazzmin import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,60 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'nza',
 
 ]
-JAZZMIN_SETTINGS = {
-    # Исправим смотря на тз
-    "site_title": "Site",     # Заголовок сайта
-    "site_header": "Simon",   # Заголовок на экране входа
-    "site_brand": "Django administrations",     # Выходит на сайте вместо Django-admin.(Администрирование сайта)
-    "welcome_sign": "Welcome to the my work",   # Приветственный текст на экране входа
-    "copyright": "NZA",     # Авторское право (footer)
-    "search_model": ["auth.User", "auth.Group"],    # Для поиска пользователей или группы
 
-
-    # Header (пока только базовые вещи исправим смотря на тз)
-    "topmenu_links": [
-
-        # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
-
-        # external url that opens in a new window (Permissions can be added)
-        # telega
-        {"name": "Support", "url": "https://t.me/Abdykadyrov_S", "new_window": True},
-
-        # model admin to link to (Permissions checked against model)
-        {"model": "auth.User"},
-
-        # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "books"},
-    ],
-
-
-    "show_sidebar": True,
-
-    "changeform_format": "horizontal_tabs",
-
-
-}
-
-
-
-# Выбрал только то что мне понравилось если что можем поменять тему
-JAZZMIN_UI_TWEAKS = {
-    # белый фон:
-    "theme": "flatly",
-    # "theme" : "simplex",  # белый фон с цветами - RGB
-    # "theme": "sketchy",     #  мультяшный
-
-
-    # темный фон:
-    # "theme" : "darkly",
-    # "theme": "slate",    # темный (серьезный , полностью)
-
-
-}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

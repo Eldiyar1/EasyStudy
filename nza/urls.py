@@ -4,6 +4,7 @@ from django.urls import path, include
 router = DefaultRouter()
 router.register(r'random-idiom', IdiomViewSet)
 router.register(r'random-quote', QuoteViewSet)
+router.register(r'grammar', GrammarViewSet)
 
 
 urlpatterns = [

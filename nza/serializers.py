@@ -44,3 +44,11 @@ class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
         fields = ['keyword', 'image_url', 'created_at']
+
+
+class GrammarSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Grammar
+        fields = '__all__'
+
+
