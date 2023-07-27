@@ -52,3 +52,45 @@ class GrammarSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username']
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+
+    class Meta:
+        model = Profile
+        fields = ['user', 'avatar', 'created_at', 'statistics', 'achievements']
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['name']
+
+
+class WordSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+    translation = serializers.SerializerMethodField()
+
+    def get_image_url(self, obj):
+        image_url = "https://api.unsplash.com/photos/random"
+        return image_url
+
+    def get_translation(self, obj):
+        translator = Translator()
+        translation = translator.translate(obj.word, dest='ru')
+        return translation.text
+
+    class Meta:
+        model = Word
+        fields = ['id', 'word', 'image_url', 'translation']
+
+
+class CategoryWordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Word
+        fields = ['id', 'category', 'word']
