@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/avatars/Без_названия.png.url" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ACER/Eng_App/english_backend/english_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ACER/Test_FastApi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\avatars" />
@@ -109,7 +102,9 @@
       <workItem from="1690267002107" duration="1474000" />
       <workItem from="1690289431390" duration="1629000" />
       <workItem from="1690353832852" duration="510000" />
-      <workItem from="1690442775807" duration="6108000" />
+      <workItem from="1690442775807" duration="6577000" />
+      <workItem from="1690611664105" duration="1005000" />
+      <workItem from="1690645565504" duration="29000" />
     </task>
     <servers />
   </component>
