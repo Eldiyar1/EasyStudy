@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import Response, APIView
 from .models import *
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, SynonymSerializer, PhotoSerializer, \
-    GrammarSerializers, ProfileSerializer, CategoryWordSerializer, CategorySerializer, WordSerializer
+    GrammarSerializers, ProfileSerializer, CategoryWordSerializer, CategorySerializer, WordSerializer, ChapterSerializers
 from nltk.corpus import wordnet
 import requests
 from rest_framework.decorators import action
@@ -31,25 +31,6 @@ class IdiomViewSet(ModelViewSet):
         return Response(serializer.data)
 
 
-class SynonymView(APIView):
-    serializer_class = SynonymSerializer
-
-    def post(self, request):
-        word = request.data.get('word', '')
-        synonyms = []
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                synonyms.append(lemma.name())
-                if len(synonyms) >= 4:
-                    break
-            if len(synonyms) >= 4:
-                break
-        serializer = SynonymSerializer(data={'word': word, 'synonyms': synonyms[:4]})
-        if serializer.is_valid():
-            return Response(serializer.data)
-        return Response(serializer.errors, status=400)
-
-
 class AntonymView(APIView):
     serializer_class = AntonymSerializer
 
@@ -60,9 +41,7 @@ class AntonymView(APIView):
             for lemma in syn.lemmas():
                 if lemma.antonyms():
                     antonyms.append(lemma.antonyms()[0].name())
-                    if len(antonyms) >= 4:
-                        break
-            if len(antonyms) >= 4:
+            if len(antonyms) == 4:
                 break
         serializer = AntonymSerializer(data={'word': word, 'antonyms': antonyms[:4]})
         if serializer.is_valid():
@@ -70,12 +49,34 @@ class AntonymView(APIView):
         return Response(serializer.errors, status=400)
 
 
+class SynonymView(APIView):
+    serializer_class = SynonymSerializer
+
+    def post(self, request):
+        word = request.data.get('word', '')
+        synonyms = []
+        for syn in wordnet.synsets(word):
+            for lemma in syn.lemmas():
+                synonyms.append(lemma.name())
+            if len(synonyms) == 4:
+                break
+        serializer = SynonymSerializer(data={'word': word, 'synonyms': synonyms[:4]})
+        if serializer.is_valid():
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+
+
+class ChapterViewSet(ModelViewSet):
+    queryset = Chapter.objects.all()
+    serializer_class = ChapterSerializers
+
+
 class PhotoSearchView(APIView):
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
 
     def get(self, request, keyword):
-        api_key = 'V93q2Wkj7o2bbPNEabw3b0Y3esdVV31pJMpQYbBo4hU  '
+        api_key = 'V93q2Wkj7o2bbPNEabw3b0Y3esdVV31pJMpQYbBo4hU'
         url = 'https://api.unsplash.com/photos/random'
 
         headers = {
@@ -110,8 +111,8 @@ class GrammarViewSet(ModelViewSet):
 class ProfileView(APIView):
     def get(self, request):
         try:
-            profile = Profile.objects.get(user=request.user)
-            serializer = ProfileSerializer(profile)
+            queryset = Profile.objects.get(user=request.user)
+            serializer = ProfileSerializer(queryset)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Profile.DoesNotExist:
             return Response({"message": "Profile not found"}, status=status.HTTP_404_NOT_FOUND)
@@ -176,9 +177,7 @@ class WordAntonymViewSet(ModelViewSet):
             for lemma in syn.lemmas():
                 if lemma.antonyms():
                     antonyms.append(lemma.antonyms()[0].name())
-                    if len(antonyms) >= 4:
-                        break
-            if len(antonyms) >= 4:
+            if len(antonyms) == 4:
                 break
         return antonyms
 
@@ -202,9 +201,7 @@ class WordSynonymViewSet(ModelViewSet):
         for syn in wordnet.synsets(word):
             for lemma in syn.lemmas():
                 synonyms.append(lemma.name())
-                if len(synonyms) >= 4:
-                    break
-            if len(synonyms) >= 4:
+            if len(synonyms) == 4:
                 break
         return synonyms[:4]
 

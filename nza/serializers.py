@@ -51,6 +51,10 @@ class GrammarSerializers(serializers.ModelSerializer):
         model = Grammar
         fields = '__all__'
 
+class ChapterSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Chapter
+        fields = ['chapter']
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -69,7 +73,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['name']
+        fields = ['category']
 
 
 class WordSerializer(serializers.ModelSerializer):

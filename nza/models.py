@@ -4,17 +4,36 @@ from django.contrib.auth.models import User
 
 
 class Quote(models.Model):
-    text = models.TextField()
+    text = models.TextField(
+        max_length=255,
+        verbose_name='Введите цитату:')
+
+    class Meta:
+        verbose_name = "Цитаты"
+        verbose_name_plural = "Цитаты"
 
 
 class Idiom(models.Model):
-    text = models.TextField()
+    text = models.TextField(
+        max_length=255,
+        verbose_name='Введите идиому:')
+
+    class Meta:
+        verbose_name = "Идиомы"
+        verbose_name_plural = "Идиомы"
 
 
 class Photo(models.Model):
-    keyword = models.CharField(max_length=100)
-    image_url = models.URLField()
+    keyword = models.CharField(
+        max_length=100,
+        verbose_name='Введите слово:')
+    image_url = models.URLField(
+        verbose_name='Ссылка на фото:')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Фото"
+        verbose_name_plural = "Фото"
 
 
 class Profile(models.Model):
@@ -44,23 +63,62 @@ class Profile(models.Model):
         verbose_name_plural = "Профили"
 
 
+class Chapter(models.Model):
+    chapter = models.CharField(
+        max_length=255,
+        verbose_name='Раздел')
+
+    class Meta:
+        verbose_name = "Раздел"
+        verbose_name_plural = "Раздел"
+
+
 class Grammar(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    test = models.JSONField(max_length=255)
-    json = JSONField()
+    chapter = models.ForeignKey(
+        Chapter,
+        on_delete=models.CASCADE,
+        default=1,
+        blank=True,
+        null=True,
+        verbose_name='Времена')
+    title = models.CharField(
+        max_length=200,
+        verbose_name='Введите тему:')
+    description = models.TextField(
+        max_length=255,
+        verbose_name='Введите описание темы:')
+    test = models.JSONField(
+        max_length=255,
+        null=True, blank=True,
+        verbose_name='Тест:')
+    json = JSONField(null=True, blank=True)
+
+
+    class Meta:
+        verbose_name = "Грамматика"
+        verbose_name_plural = "Грамматика"
 
     def __str__(self):
         return self.title
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    category = models.CharField(
+        max_length=100,
+        verbose_name='Категории:')
+
+    class Meta:
+        verbose_name = "Категории"
+        verbose_name_plural = "Категории"
 
     def __str__(self):
-        return self.name
+        return self.category
 
 
 class Word(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    word = models.CharField(max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    word = models.CharField(max_length=100, verbose_name='Слово')
+
+    class Meta:
+        verbose_name = "Слова"
+        verbose_name_plural = "Слова"

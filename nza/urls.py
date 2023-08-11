@@ -7,6 +7,7 @@ router.register(r'random-idiom', IdiomViewSet)
 router.register(r'random-quote', QuoteViewSet)
 router.register(r'grammar', GrammarViewSet)
 router.register(r'word_translate', WordTranslateViewSet)
+router.register(r'chapter', ChapterViewSet)
 
 category_list = CategoryViewSet.as_view({'get': 'list', 'post': 'create'})
 category_detail = CategoryWordViewSet.as_view({'get': 'words_by_category', 'post': 'create'})

@@ -18,10 +18,23 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:9000",
 ]
-ALLOWED_HOSTS = ['*'] + CORS_ALLOWED_ORIGINS
+ALLOWED_HOSTS = ['*']
+# settings.py
+GOOGLE_CLOUD_CREDENTIALS = {
+    "type": "service_account",
+    "project_id": "your-project-id",
+    "private_key_id": "your-private-key-id",
+    "private_key": "your-private-key",
+    "client_email": "your-client-email",
+    "client_id": "your-client-id",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "your-client-x509-cert-url",
+}
 
 # Application definition
-
+CSRF_TRUSTED_ORIGINS = [' https://a4c9-212-112-103-156.ngrok-free.app ']
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
