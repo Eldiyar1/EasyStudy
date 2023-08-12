@@ -14,7 +14,7 @@ class QuoteSerializers(ModelSerializer):
 
     class Meta:
         model = Quote
-        fields = ['text', 'translation']
+        fields = ['text', 'translation', 'author']
 
 
 class IdiomSerializers(ModelSerializer):
@@ -46,34 +46,53 @@ class PhotoSerializer(serializers.ModelSerializer):
         fields = ['keyword', 'image_url', 'created_at']
 
 
-class GrammarSerializers(serializers.ModelSerializer):
+class CategoryWordSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Grammar
-        fields = '__all__'
+        model = Word
+        fields = ['id', 'category', 'word']
+
+
+class QuestionSerializers(serializers.ModelSerializer):
+    incorrect_answers = serializers.SerializerMethodField()
+    correct_answer = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Question
+        fields = ('text', 'correct_answer', 'incorrect_answers')
+
+    def get_incorrect_answers(self, obj):
+        incorrect_answers = [obj.answer_1, obj.answer_2, obj.answer_3, obj.answer_4, ]
+        incorrect_answers.pop(obj.correct_answer_index - 1)
+        return incorrect_answers
+
+    def get_correct_answer(self, obj):
+        if obj.correct_answer_index == 1:
+            return obj.answer_1
+        elif obj.correct_answer_index == 2:
+            return obj.answer_2
+        elif obj.correct_answer_index == 3:
+            return obj.answer_3
+        elif obj.correct_answer_index == 4:
+            return obj.answer_4
+
 
 class ChapterSerializers(serializers.ModelSerializer):
     class Meta:
         model = Chapter
-        fields = ['chapter']
+        fields = '__all__'
 
-class UserSerializer(serializers.ModelSerializer):
+class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['username']
-
-
-class ProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+        model = Subsection
+        fields = "__all__"
+class GrammarSerializers(serializers.ModelSerializer):
+    test = QuestionSerializers(many=True)
+    chapter = ChapterSerializers()
+    subsection = SubsectionSerializers()
 
     class Meta:
-        model = Profile
-        fields = ['user', 'avatar', 'created_at', 'statistics', 'achievements']
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['category']
+        model = Grammar
+        fields = ('chapter', 'subsection', 'title', 'description', 'test')
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -92,9 +111,3 @@ class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
         fields = ['id', 'word', 'image_url', 'translation']
-
-
-class CategoryWordSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Word
-        fields = ['id', 'category', 'word']

@@ -1,11 +1,14 @@
 from random import choice
+
+from django.shortcuts import get_object_or_404
 from googletrans import Translator
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import Response, APIView
 from .models import *
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, SynonymSerializer, PhotoSerializer, \
-    GrammarSerializers, ProfileSerializer, CategoryWordSerializer, CategorySerializer, WordSerializer, ChapterSerializers
+    GrammarSerializers, CategoryWordSerializer, WordSerializer, \
+    ChapterSerializers, QuestionSerializers
 from nltk.corpus import wordnet
 import requests
 from rest_framework.decorators import action
@@ -14,21 +17,31 @@ from rest_framework.decorators import action
 class QuoteViewSet(ModelViewSet):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializers
-
     def list(self, request):
         quote = choice(self.queryset)
         serializer = self.serializer_class(quote)
         return Response(serializer.data)
+    # def list(self, request):
+    #     quote_index = request.session.get('quote_index', 0)
+    #     quote = get_object_or_404(self.queryset, pk=quote_index + 1)
+    #
+    #     request.session['quote_index'] = (quote_index + 1) % len(self.queryset)
+    #
+    #     return Response(self.serializer_class(quote).data)
 
 
 class IdiomViewSet(ModelViewSet):
     queryset = Idiom.objects.all()
     serializer_class = IdiomSerializers
 
+
     def list(self, request):
-        idiom = choice(self.queryset)
-        serializer = self.serializer_class(idiom)
-        return Response(serializer.data)
+        idiom_index = request.session.get('idiom_index', 0)
+        idiom = get_object_or_404(self.queryset, pk=idiom_index + 1)
+
+        request.session['idiom_index'] = (idiom_index + 1) % len(self.queryset)
+
+        return Response(self.serializer_class(idiom).data)
 
 
 class AntonymView(APIView):
@@ -66,9 +79,6 @@ class SynonymView(APIView):
         return Response(serializer.errors, status=400)
 
 
-class ChapterViewSet(ModelViewSet):
-    queryset = Chapter.objects.all()
-    serializer_class = ChapterSerializers
 
 
 class PhotoSearchView(APIView):
@@ -103,20 +113,16 @@ class PhotoSearchView(APIView):
         return Response(serializer.errors)
 
 
-class GrammarViewSet(ModelViewSet):
-    queryset = Grammar.objects.all()
-    serializer_class = GrammarSerializers
-
-
-class ProfileView(APIView):
+class GrammarViewSet(APIView):
     def get(self, request):
-        try:
-            queryset = Profile.objects.get(user=request.user)
-            serializer = ProfileSerializer(queryset)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except Profile.DoesNotExist:
-            return Response({"message": "Profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        grammar = Grammar.objects.all()
+        serializer = GrammarSerializers(grammar, many=True)
+        return Response(serializer.data)
 
+
+class ChapterViewSet(ModelViewSet):
+    queryset = Chapter.objects.all()
+    serializer_class = ChapterSerializers
 
 class CategoryWordViewSet(ModelViewSet):
     queryset = Word.objects.all()
@@ -129,9 +135,6 @@ class CategoryWordViewSet(ModelViewSet):
         return Response(serializer.data)
 
 
-class CategoryViewSet(ModelViewSet):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
 
 
 class WordTranslateViewSet(ModelViewSet):
@@ -167,56 +170,12 @@ class WordTranslateViewSet(ModelViewSet):
         return Response(word_data, status=status.HTTP_200_OK)
 
 
-class WordAntonymViewSet(ModelViewSet):
-    queryset = Word.objects.all()
-    serializer_class = WordSerializer
-
-    def get_antonyms(self, word):
-        antonyms = []
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                if lemma.antonyms():
-                    antonyms.append(lemma.antonyms()[0].name())
-            if len(antonyms) == 4:
-                break
-        return antonyms
-
-    @action(detail=True, methods=['get'])
-    def antonyms(self, request, pk=None):
-        try:
-            word = self.get_object()
-            antonyms = self.get_antonyms(word.word)
-            data = {'word': word.word, 'antonyms': antonyms}
-            return Response(data, status=status.HTTP_200_OK)
-        except Word.DoesNotExist:
-            return Response({'error': 'Word not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
-class WordSynonymViewSet(ModelViewSet):
-    queryset = Word.objects.all()
-    serializer_class = SynonymSerializer
 
-    def get_synonyms(self, word):
-        synonyms = []
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                synonyms.append(lemma.name())
-            if len(synonyms) == 4:
-                break
-        return synonyms[:4]
 
-    def list(self, request, *args, **kwargs):
-        instance = self.get_object()
-        word = instance.word
-
-        synonyms = self.get_synonyms(word)
-
-        synonyms_data = {
-            'word': word,
-            'synonyms': synonyms
-        }
-
-        serializer = self.get_serializer(data=synonyms_data)
-        serializer.is_valid()
-
+class QuestionListView(APIView):
+    def get(self, request, *args, **kwargs):
+        questions = Question.objects.all()
+        serializer = QuestionSerializers(questions, many=True)
         return Response(serializer.data)

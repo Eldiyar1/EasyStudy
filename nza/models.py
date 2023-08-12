@@ -1,26 +1,33 @@
 from django.db import models
-from jsonfield import JSONField
-from django.contrib.auth.models import User
 
 
 class Quote(models.Model):
     text = models.TextField(
         max_length=255,
         verbose_name='Введите цитату:')
+    author = models.TextField(
+        max_length=50,
+        verbose_name='Автор:')
 
     class Meta:
         verbose_name = "Цитаты"
         verbose_name_plural = "Цитаты"
 
+    def __str__(self):
+        return self.text
+
 
 class Idiom(models.Model):
     text = models.TextField(
         max_length=255,
-        verbose_name='Введите идиому:')
+        verbose_name='Введите идиому')
 
     class Meta:
         verbose_name = "Идиомы"
         verbose_name_plural = "Идиомы"
+
+    def __str__(self):
+        return self.text
 
 
 class Photo(models.Model):
@@ -36,33 +43,6 @@ class Photo(models.Model):
         verbose_name_plural = "Фото"
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE
-    )
-    avatar = models.ImageField(
-        upload_to='avatars/',
-        blank=True, null=True,
-        verbose_name="фотография пользователя"
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name="Дата создания"
-    )
-    statistics = models.TextField(
-        blank=True,
-        verbose_name="Статика"
-    )
-    achievements = models.TextField(
-        blank=True,
-        verbose_name="Достижения"
-    )
-
-    class Meta:
-        verbose_name = "Профиль"
-        verbose_name_plural = "Профили"
-
-
 class Chapter(models.Model):
     chapter = models.CharField(
         max_length=255,
@@ -72,27 +52,66 @@ class Chapter(models.Model):
         verbose_name = "Раздел"
         verbose_name_plural = "Раздел"
 
+    def __str__(self):
+        return self.chapter
+
+
+class Subsection(models.Model):
+    subsection = models.CharField(max_length=255, verbose_name='Подраздел')
+
+    class Meta:
+        verbose_name = "Подраздел"
+        verbose_name_plural = "Подраздел"
+
+    def __str__(self):
+        return self.subsection
+
+
+class Question(models.Model):
+    text = models.CharField(max_length=255, verbose_name='Текст:')
+    answer_1 = models.CharField(max_length=100, verbose_name='Ответ 1:')
+    answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
+    answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
+    answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
+    correct_answer_index = models.PositiveSmallIntegerField(
+        choices=[(1, 'Answer 1'), (2, 'Answer 2'), (3, 'Answer 3'), (4, 'Answer 4')]
+    , verbose_name='Правильный ответ:')
+
+    def incorrect_answers(self):
+        return [
+            self.answer_1,
+            self.answer_2,
+            self.answer_3,
+            self.answer_4,
+        ]
+
+    class Meta:
+        verbose_name = "Tест"
+        verbose_name_plural = "Тест"
+
+    def __str__(self):
+        return self.text
+
 
 class Grammar(models.Model):
     chapter = models.ForeignKey(
         Chapter,
         on_delete=models.CASCADE,
+        verbose_name='Раздел')
+    subsection = models.ForeignKey(
+        Subsection,
+        on_delete=models.CASCADE,
         default=1,
         blank=True,
         null=True,
-        verbose_name='Времена')
+        verbose_name='Подраздел')
     title = models.CharField(
         max_length=200,
         verbose_name='Введите тему:')
     description = models.TextField(
-        max_length=255,
-        verbose_name='Введите описание темы:')
-    test = models.JSONField(
-        max_length=255,
-        null=True, blank=True,
-        verbose_name='Тест:')
-    json = JSONField(null=True, blank=True)
 
+        verbose_name='Введите описание темы:')
+    test = models.ManyToManyField(Question)
 
     class Meta:
         verbose_name = "Грамматика"
@@ -102,22 +121,23 @@ class Grammar(models.Model):
         return self.title
 
 
-class Category(models.Model):
-    category = models.CharField(
-        max_length=100,
-        verbose_name='Категории:')
+class Listening(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Аудирование')
+    text = models.TextField(verbose_name='Текст')
 
     class Meta:
-        verbose_name = "Категории"
-        verbose_name_plural = "Категории"
+        verbose_name = "Аудирование"
+        verbose_name_plural = "Аудирование"
 
     def __str__(self):
-        return self.category
+        return self.title
+
 
 
 class Word(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    word = models.CharField(max_length=100, verbose_name='Слово')
+    word = models.CharField(
+        max_length=100,
+        verbose_name='Слово')
 
     class Meta:
         verbose_name = "Слова"
