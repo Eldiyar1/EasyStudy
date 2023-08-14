@@ -34,7 +34,7 @@ GOOGLE_CLOUD_CREDENTIALS = {
 }
 
 # Application definition
-CSRF_TRUSTED_ORIGINS = [' https://9754-46-251-218-127.ngrok-free.app   ']
+CSRF_TRUSTED_ORIGINS = [' https://edbc-185-117-148-212.ngrok-free.app   ']
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',

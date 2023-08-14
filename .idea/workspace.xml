@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +150,8 @@
       <workItem from="1691736161080" duration="1270000" />
       <workItem from="1691738983401" duration="6058000" />
       <workItem from="1691771996720" duration="12038000" />
-      <workItem from="1691847595919" duration="2280000" />
+      <workItem from="1691847595919" duration="2765000" />
+      <workItem from="1691940008111" duration="764000" />
     </task>
     <servers />
   </component>
