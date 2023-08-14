@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1691738983401" duration="6058000" />
       <workItem from="1691771996720" duration="12038000" />
       <workItem from="1691847595919" duration="2765000" />
-      <workItem from="1691940008111" duration="764000" />
+      <workItem from="1691940008111" duration="1720000" />
     </task>
     <servers />
   </component>

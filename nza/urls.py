@@ -3,8 +3,8 @@ from .views import *
 from django.urls import path, include
 
 router = DefaultRouter()
-router.register(r'random-idiom', IdiomViewSet)
-router.register(r'random-quote', QuoteViewSet)
+router.register(r'idiom', IdiomViewSet)
+router.register(r'quote', QuoteViewSet)
 router.register(r'word_translate', WordTranslateViewSet)
 router.register(r'chapter', ChapterViewSet)
 category_detail = CategoryWordViewSet.as_view({'get': 'words_by_category', 'post': 'create'})

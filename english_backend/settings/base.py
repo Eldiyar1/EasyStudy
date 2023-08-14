@@ -1,14 +1,8 @@
 from pathlib import Path
 from .jazzmin import *
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v&dmg$vy=p5d+)yv3axgacb3z)b5!83ycos_cnv+*(+($m#udm'
+SECRET_KEY = ('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -19,19 +13,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:9000",
 ]
 ALLOWED_HOSTS = ['*']
-# settings.py
-GOOGLE_CLOUD_CREDENTIALS = {
-    "type": "service_account",
-    "project_id": "your-project-id",
-    "private_key_id": "your-private-key-id",
-    "private_key": "your-private-key",
-    "client_email": "your-client-email",
-    "client_id": "your-client-id",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://accounts.google.com/o/oauth2/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "your-client-x509-cert-url",
-}
 
 # Application definition
 CSRF_TRUSTED_ORIGINS = [' https://edbc-185-117-148-212.ngrok-free.app   ']
@@ -48,6 +29,8 @@ INSTALLED_APPS = [
     'nza',
     'corsheaders',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
