@@ -43,7 +43,6 @@ class WordAdmin(admin.ModelAdmin):
     search_fields = ('word',)
 
 
-admin.site.register(Category)
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Idiom, IdiomAdmin)
 admin.site.register(Chapter, ChapterAdmin)

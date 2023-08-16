@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/views.py" afterDir="false" />
     </list>
@@ -160,7 +161,7 @@
       <workItem from="1691940008111" duration="16386000" />
       <workItem from="1692122210470" duration="240000" />
       <workItem from="1692163302383" duration="458000" />
-      <workItem from="1692164134518" duration="4727000" />
+      <workItem from="1692164134518" duration="7336000" />
     </task>
     <servers />
   </component>

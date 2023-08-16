@@ -1,31 +1,21 @@
-from googletrans import Translator
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import Response
 from .models import *
-from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, \
-    CategoryWordSerializer, WordSerializer, \
-    SynonymSerializer, GrammarSerializers
-from nltk.corpus import wordnet
-import requests
-from rest_framework.decorators import action
+from .serializers import QuoteSerializers, \
+    IdiomSerializers, AntonymSerializer, \
+    WordSerializer, SynonymSerializer, \
+    GrammarSerializers
+from .service import *
 
 
 class QuoteViewSet(ModelViewSet):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializers
 
-    def list(self, request):
-        current_index = request.session.get('current_quote_index', 0)
-
-        if current_index >= len(self.queryset):
-            current_index = 0
-
-        quote = self.queryset[current_index]
+    def list(self, request, *args, **kwargs):
+        quote = QuoteService.get_current_quote(request, self.queryset)
         serializer = self.serializer_class(quote)
-
-        request.session['current_quote_index'] = (current_index + 1) % len(self.queryset)
-
         return Response(serializer.data)
 
 
@@ -33,17 +23,9 @@ class IdiomViewSet(ModelViewSet):
     queryset = Idiom.objects.all()
     serializer_class = IdiomSerializers
 
-    def list(self, request):
-        current_index = request.session.get('current_idiom_index', 0)
-
-        if current_index >= len(self.queryset):
-            current_index = 0
-
-        quote = self.queryset[current_index]
-        serializer = self.serializer_class(quote)
-
-        request.session['current_idiom_index'] = (current_index + 1) % len(self.queryset)
-
+    def list(self, request, *args, **kwargs):
+        idiom = IdiomService.get_current_idiom(request, self.queryset)
+        serializer = self.serializer_class(idiom)
         return Response(serializer.data)
 
 
@@ -52,18 +34,14 @@ class AntonymViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         word = request.data.get('word', '')
-        antonyms = []
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                if lemma.antonyms():
-                    antonyms.append(lemma.antonyms()[0].name())
-            if len(antonyms) == 4:
-                break
+        antonyms = AntonymService.get_antonyms(word, num_antonyms=4)
+
         serializer = self.get_serializer(data={'word': word, 'antonyms': antonyms[:4]})
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
+
         headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=201, headers=headers)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def get_queryset(self):
         return Antonym.objects.all()
@@ -90,43 +68,19 @@ class SynonymViewSet(ModelViewSet):
         return Synonym.objects.all()
 
 
-class CategoryWordViewSet(ModelViewSet):
-    queryset = Word.objects.all()
-    serializer_class = CategoryWordSerializer
-
-    @action(detail=True, methods=['get'])
-    def words_by_category(self, request, pk=None):
-        words = Word.objects.filter(category=pk)
-        serializer = CategoryWordSerializer(words, many=True)
-        return Response(serializer.data)
-
 
 class WordTranslateViewSet(ModelViewSet):
     queryset = Word.objects.all()
     serializer_class = WordSerializer
-
-    def get_image_url(self, word):
-        api_key = 'IzKOO2v_sALdUpHkPJcEwFHbbYYW0e0ELBmapfm8NIg'
-        url = 'https://api.unsplash.com/photos/random'
-        headers = {'Authorization': f'Client-ID {api_key}'}
-        params = {'query': word}
-        response = requests.get(url, headers=headers, params=params)
-        data = response.json()
-        return data['urls']['regular']
-
-    def get_translation(self, word):
-        translator = Translator()
-        translation = translator.translate(word, dest='ru')
-        return translation.text
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
         word_data = serializer.data
 
-        image_url = self.get_image_url(word_data['word'])
+        image_url = WordTranslateService.get_image_url(word_data['word'])
 
-        word_translation = self.get_translation(word_data['word'])
+        word_translation = WordTranslateService.get_translation(word_data['word'])
 
         word_data['image_url'] = image_url
         word_data['translation'] = word_translation
@@ -147,7 +101,7 @@ class GrammarViewSet(ModelViewSet):
     queryset = Grammar.objects.all()
     serializer_class = GrammarSerializers
 
-    def list(self, request):
-        grammar = Grammar.objects.all()
-        serializer = GrammarSerializers(grammar, many=True)
+    def list(self, request, *args, **kwargs):
+        grammar = GrammarService.get_all_grammar()
+        serializer = self.serializer_class(grammar, many=True)
         return Response(serializer.data)

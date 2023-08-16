@@ -108,8 +108,3 @@ class WordSerializer(serializers.ModelSerializer):
         model = Word
         fields = ['id', 'word', 'image_url', 'translation']
 
-
-class CategoryWordSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Word
-        fields = ['id', 'category', 'word']
