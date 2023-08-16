@@ -5,7 +5,7 @@ from rest_framework.views import Response
 from .models import *
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, \
     CategoryWordSerializer, WordSerializer, \
-    SynonymSerializer, GrammarSerializers, QuestionSerializers
+    SynonymSerializer, GrammarSerializers
 from nltk.corpus import wordnet
 import requests
 from rest_framework.decorators import action
@@ -133,11 +133,14 @@ class WordTranslateViewSet(ModelViewSet):
 
         return Response(word_data, status=status.HTTP_200_OK)
 
-    def destroy(self, request, *args, **kwargs):
-        instance = self.get_object()
-        instance.delete_associated_id()
-        self.perform_destroy(instance)
-        return Response(status=status.HTTP_204_NO_CONTENT)
+    def perform_create(self, serializer):
+        last_word = Word.objects.last()
+        new_id = (last_word.id + 1) if last_word else 1
+        serializer.save(id=new_id)
+
+    def delete(self, request):
+        Word.objects.all().delete()
+        Word.objects._reset_sequence(0)
 
 
 class GrammarViewSet(ModelViewSet):
@@ -147,14 +150,4 @@ class GrammarViewSet(ModelViewSet):
     def list(self, request):
         grammar = Grammar.objects.all()
         serializer = GrammarSerializers(grammar, many=True)
-        return Response(serializer.data)
-
-
-class QuestionViewSet(ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = QuoteSerializers
-
-    def list(self, request, *args, **kwargs):
-        questions = Question.objects.all()
-        serializer = QuestionSerializers(questions, many=True)
         return Response(serializer.data)

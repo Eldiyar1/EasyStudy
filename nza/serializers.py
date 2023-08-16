@@ -33,7 +33,7 @@ class IdiomSerializers(ModelSerializer):
 class AntonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Antonym
-        fields = ('id', 'word', 'antonyms')
+        fields = ('word', 'antonyms')
 
 
 class SynonymSerializer(serializers.ModelSerializer):
@@ -43,7 +43,6 @@ class SynonymSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'synonym': {'required': False}
         }
-
 
 
 class QuestionSerializers(serializers.ModelSerializer):

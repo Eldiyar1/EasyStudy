@@ -12,8 +12,6 @@ class IdiomAdmin(admin.ModelAdmin):
     search_fields = ('text',)
 
 
-
-
 class ChapterAdmin(admin.ModelAdmin):
     list_display = ('chapter',)
     search_fields = ('chapter',)

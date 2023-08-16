@@ -6,26 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/english_backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nza/service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avatars/WhatsApp_Image_2022-12-27_at_14.31.54.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/avatars/Без_названия.png.url" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0002_alter_grammar_test_delete_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0003_remove_grammar_test_grammar_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0004_alter_question_options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0005_rename_chapter_subsection_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0006_remove_quote_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0007_quote_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0008_alter_quote_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0009_remove_word_category_delete_category.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0010_question_answer_4_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0011_alter_question_answer_1_alter_question_answer_2_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0012_alter_listening_options_alter_listening_title.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0013_alter_listening_text.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
@@ -178,7 +160,7 @@
       <workItem from="1691940008111" duration="16386000" />
       <workItem from="1692122210470" duration="240000" />
       <workItem from="1692163302383" duration="458000" />
-      <workItem from="1692164134518" duration="2431000" />
+      <workItem from="1692164134518" duration="4727000" />
     </task>
     <servers />
   </component>

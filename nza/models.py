@@ -54,7 +54,6 @@ class Idiom(models.Model):
         return self.text
 
 
-
 class Chapter(models.Model):
     chapter = models.CharField(
         max_length=255,
@@ -158,8 +157,8 @@ class Category(models.Model):
 
 
 class Word(models.Model):
-    category = models.ForeignKey(Category,null=True,  on_delete=models.CASCADE, verbose_name='Категория')
-    word = models.CharField(max_length=100,  verbose_name='Слово')
+    category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE, verbose_name='Категория')
+    word = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:
         verbose_name = "Слова"

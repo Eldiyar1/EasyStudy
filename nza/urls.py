@@ -8,7 +8,6 @@ router.register(r'idiom', IdiomViewSet, basename='idiom')
 router.register(r'quote', QuoteViewSet, basename='quote')
 router.register(r'word_translate', WordTranslateViewSet, basename='word_translate')
 router.register(r'grammar', GrammarViewSet, basename='grammar')
-router.register(r'question', QuestionViewSet, basename='question')
 router.register(r'antonym', AntonymViewSet, basename='antonym')
 router.register(r'synonym', SynonymViewSet, basename='synonym')
 
