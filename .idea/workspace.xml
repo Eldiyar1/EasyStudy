@@ -7,12 +7,9 @@
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/english_backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/req.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +158,7 @@
       <workItem from="1691940008111" duration="16386000" />
       <workItem from="1692122210470" duration="240000" />
       <workItem from="1692163302383" duration="458000" />
-      <workItem from="1692164134518" duration="7336000" />
+      <workItem from="1692164134518" duration="14732000" />
     </task>
     <servers />
   </component>

@@ -29,24 +29,6 @@ class IdiomViewSet(ModelViewSet):
         return Response(serializer.data)
 
 
-class AntonymViewSet(ModelViewSet):
-    serializer_class = AntonymSerializer
-
-    def create(self, request, *args, **kwargs):
-        word = request.data.get('word', '')
-        antonyms = AntonymService.get_antonyms(word, num_antonyms=4)
-
-        serializer = self.get_serializer(data={'word': word, 'antonyms': antonyms[:4]})
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-    def get_queryset(self):
-        return Antonym.objects.all()
-
-
 class SynonymViewSet(ModelViewSet):
     serializer_class = SynonymSerializer
 
@@ -67,6 +49,23 @@ class SynonymViewSet(ModelViewSet):
     def get_queryset(self):
         return Synonym.objects.all()
 
+
+class AntonymViewSet(ModelViewSet):
+    serializer_class = AntonymSerializer
+
+    def create(self, request, *args, **kwargs):
+        word = request.data.get('word', '')
+        antonyms = AntonymService.get_antonyms(word, num_antonyms=4)
+
+        serializer = self.get_serializer(data={'word': word, 'antonyms': antonyms[:4]})
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def get_queryset(self):
+        return Antonym.objects.all()
 
 
 class WordTranslateViewSet(ModelViewSet):

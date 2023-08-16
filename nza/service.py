@@ -1,9 +1,8 @@
-from django.contrib.sessions.models import Session
 from nltk.corpus import wordnet
-from .models import Word
 from .models import Grammar
 import requests
 from googletrans import Translator
+from decouple import config
 
 
 class QuoteService:
@@ -34,7 +33,6 @@ class IdiomService:
         return idiom
 
 
-
 class AntonymService:
     @staticmethod
     def get_antonyms(word, num_antonyms=4):
@@ -51,7 +49,7 @@ class AntonymService:
 class WordTranslateService:
     @staticmethod
     def get_image_url(word):
-        api_key = 'IzKOO2v_sALdUpHkPJcEwFHbbYYW0e0ELBmapfm8NIg'
+        api_key = config('API_KEY')
         url = 'https://api.unsplash.com/photos/random'
         headers = {'Authorization': f'Client-ID {api_key}'}
         params = {'query': word}
@@ -70,4 +68,3 @@ class GrammarService:
     @staticmethod
     def get_all_grammar():
         return Grammar.objects.all()
-
