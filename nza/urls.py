@@ -1,22 +1,20 @@
 from rest_framework.routers import DefaultRouter
 from .views import *
 from django.urls import path, include
+from .service import *
 
 router = DefaultRouter()
-router.register(r'idiom', IdiomViewSet)
-router.register(r'quote', QuoteViewSet)
-router.register(r'word_translate', WordTranslateViewSet)
-router.register(r'chapter', ChapterViewSet)
-category_detail = CategoryWordViewSet.as_view({'get': 'words_by_category', 'post': 'create'})
+router.register(r'idiom', IdiomViewSet, basename='idiom')
+router.register(r'quote', QuoteViewSet, basename='quote')
+router.register(r'word_translate', WordTranslateViewSet, basename='word_translate')
+router.register(r'grammar', GrammarViewSet, basename='grammar')
+router.register(r'question', QuestionViewSet, basename='question')
+router.register(r'antonym', AntonymViewSet, basename='antonym')
+router.register(r'synonym', SynonymViewSet, basename='synonym')
 
 
 urlpatterns = [
     *router.urls,
-    path('antonyms/', AntonymView.as_view(), name='antonyms'),
-    path('synonyms/', SynonymView.as_view(), name='synonyms'),
-    path('grammar/', GrammarViewSet.as_view(), name='grammar'),
-    path('question/', QuestionListView.as_view(), name='question'),
-    path('search/<str:keyword>/', PhotoSearchView.as_view()),
     path('', include(router.urls)),
 ]
 

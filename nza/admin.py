@@ -12,9 +12,6 @@ class IdiomAdmin(admin.ModelAdmin):
     search_fields = ('text',)
 
 
-class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('keyword', 'created_at')
-    search_fields = ('keyword',)
 
 
 class ChapterAdmin(admin.ModelAdmin):
@@ -48,9 +45,9 @@ class WordAdmin(admin.ModelAdmin):
     search_fields = ('word',)
 
 
+admin.site.register(Category)
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Idiom, IdiomAdmin)
-admin.site.register(Photo, PhotoAdmin)
 admin.site.register(Chapter, ChapterAdmin)
 admin.site.register(Subsection, SubsectionAdmin)
 admin.site.register(Question, QuestionAdmin)

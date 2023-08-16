@@ -30,26 +30,20 @@ class IdiomSerializers(ModelSerializer):
         fields = ['text', 'translation']
 
 
-class SynonymSerializer(serializers.Serializer):
-    word = serializers.CharField(max_length=100)
-    synonyms = serializers.ListField(child=serializers.CharField(max_length=100), required=False)
-
-
-class AntonymSerializer(serializers.Serializer):
-    word = serializers.CharField(max_length=100)
-    antonyms = serializers.ListField(child=serializers.CharField(max_length=100), required=False)
-
-
-class PhotoSerializer(serializers.ModelSerializer):
+class AntonymSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Photo
-        fields = ['keyword', 'image_url', 'created_at']
+        model = Antonym
+        fields = ('id', 'word', 'antonyms')
 
 
-class CategoryWordSerializer(serializers.ModelSerializer):
+class SynonymSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Word
-        fields = ['id', 'category', 'word']
+        model = Synonym
+        fields = ('word', 'synonym')
+        extra_kwargs = {
+            'synonym': {'required': False}
+        }
+
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -81,10 +75,13 @@ class ChapterSerializers(serializers.ModelSerializer):
         model = Chapter
         fields = '__all__'
 
+
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
         fields = "__all__"
+
+
 class GrammarSerializers(serializers.ModelSerializer):
     test = QuestionSerializers(many=True)
     chapter = ChapterSerializers()
@@ -111,3 +108,9 @@ class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
         fields = ['id', 'word', 'image_url', 'translation']
+
+
+class CategoryWordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Word
+        fields = ['id', 'category', 'word']
