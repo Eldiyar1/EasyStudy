@@ -43,6 +43,11 @@ class WordAdmin(admin.ModelAdmin):
     search_fields = ('word',)
 
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+
+
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Idiom, IdiomAdmin)
 admin.site.register(Chapter, ChapterAdmin)
@@ -51,3 +56,4 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(Grammar, GrammarAdmin)
 admin.site.register(Listening, ListeningAdmin)
 admin.site.register(Word, WordAdmin)
+admin.site.register(Category, CategoryAdmin)

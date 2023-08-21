@@ -41,6 +41,11 @@ class Quote(models.Model):
         return self.text
 
 
+class CurrentQuote(models.Model):
+    quote = models.ForeignKey(Quote, on_delete=models.CASCADE)
+    date = models.DateField()
+
+
 class Idiom(models.Model):
     text = models.TextField(
         max_length=255,
@@ -52,6 +57,11 @@ class Idiom(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class CurrentIdiom(models.Model):
+    idiom = models.ForeignKey(Idiom, on_delete=models.CASCADE)
+    date = models.DateField()
 
 
 class Chapter(models.Model):
@@ -142,9 +152,14 @@ class Listening(models.Model):
     def __str__(self):
         return self.title
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
 
 class Word(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     word = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:

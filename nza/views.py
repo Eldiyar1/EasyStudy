@@ -1,11 +1,12 @@
+from rest_framework.decorators import action
+from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.views import Response
-from .models import *
 from .serializers import QuoteSerializers, \
     IdiomSerializers, AntonymSerializer, \
     WordSerializer, SynonymSerializer, \
-    GrammarSerializers
+    CategorySerializer,GrammarSerializers\
+
 from .service import *
 
 
@@ -13,9 +14,9 @@ class QuoteViewSet(ModelViewSet):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializers
 
-    def list(self, request, *args, **kwargs):
-        quote = QuoteService.get_current_quote(request, self.queryset)
-        serializer = self.serializer_class(quote)
+    def list(self, request):
+        item = CurrentQuoteService.get_current_quote()
+        serializer = self.serializer_class(item)
         return Response(serializer.data)
 
 
@@ -23,9 +24,9 @@ class IdiomViewSet(ModelViewSet):
     queryset = Idiom.objects.all()
     serializer_class = IdiomSerializers
 
-    def list(self, request, *args, **kwargs):
-        idiom = IdiomService.get_current_idiom(request, self.queryset)
-        serializer = self.serializer_class(idiom)
+    def list(self, request):
+        item = CurrentIdiomService.get_current_idiom()
+        serializer = self.serializer_class(item)
         return Response(serializer.data)
 
 
@@ -103,4 +104,16 @@ class GrammarViewSet(ModelViewSet):
     def list(self, request, *args, **kwargs):
         grammar = GrammarService.get_all_grammar()
         serializer = self.serializer_class(grammar, many=True)
+        return Response(serializer.data)
+
+
+
+class CategoryWordViewSet(ModelViewSet):
+    queryset = Word.objects.all()
+    serializer_class = CategorySerializer
+
+    @action(detail=True, methods=['get'])
+    def words_by_category(self, request, pk=None):
+        words = Word.objects.filter(category=pk)
+        serializer = CategorySerializer(words, many=True)
         return Response(serializer.data)

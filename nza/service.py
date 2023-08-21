@@ -1,36 +1,36 @@
 from nltk.corpus import wordnet
-from .models import Grammar
+from .models import *
 import requests
 from googletrans import Translator
 from decouple import config
+from datetime import date
+from random import choice
 
 
-class QuoteService:
+class CurrentQuoteService:
     @staticmethod
-    def get_current_quote(request, queryset):
-        current_index = request.session.get('current_quote_index', 0)
+    def get_current_quote():
+        today = date.today()
+        current_quote = CurrentQuote.objects.filter(date=today).first()
 
-        if current_index >= len(queryset):
-            current_index = 0
+        if current_quote is None:
+            quote = choice(Quote.objects.all())
+            current_quote = CurrentQuote.objects.create(quote=quote, date=today)
 
-        quote = queryset[current_index]
-        request.session['current_quote_index'] = (current_index + 1) % len(queryset)
-
-        return quote
+        return current_quote.quote
 
 
-class IdiomService:
+class CurrentIdiomService:
     @staticmethod
-    def get_current_idiom(request, queryset):
-        current_index = request.session.get('current_idiom_index', 0)
+    def get_current_idiom():
+        today = date.today()
+        current_idiom = CurrentIdiom.objects.filter(date=today).first()
 
-        if current_index >= len(queryset):
-            current_index = 0
+        if current_idiom is None:
+            idiom = choice(Idiom.objects.all())
+            current_idiom = CurrentIdiom.objects.create(idiom=idiom, date=today)
 
-        idiom = queryset[current_index]
-        request.session['current_idiom_index'] = (current_index + 1) % len(queryset)
-
-        return idiom
+        return current_idiom.idiom
 
 
 class AntonymService:

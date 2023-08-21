@@ -17,6 +17,12 @@ class QuoteSerializers(ModelSerializer):
         fields = ['text', 'translation', 'author']
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['name']
+
+
 class IdiomSerializers(ModelSerializer):
     translation = serializers.SerializerMethodField()
 
@@ -107,4 +113,3 @@ class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
         fields = ['id', 'word', 'image_url', 'translation']
-
