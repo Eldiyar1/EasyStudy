@@ -5,16 +5,23 @@ from googletrans import Translator
 
 
 class QuoteSerializers(ModelSerializer):
-    translation = serializers.SerializerMethodField()
+    translation_text = serializers.SerializerMethodField()
+    translation_author = serializers.SerializerMethodField()
 
-    def get_translation(self, obj):
+    def get_translation_text(self, obj):
         translator = Translator()
         translation = translator.translate(obj.text, dest='ru')
         return translation.text
 
+    def get_translation_author(self, obj):
+        translator = Translator()
+        translation = translator.translate(obj.author, dest='ru')
+        return translation.text
+
     class Meta:
         model = Quote
-        fields = ['text', 'translation', 'author']
+        fields = ['text', 'translation_text', 'author', 'translation_author']
+
 
 
 class CategorySerializer(serializers.ModelSerializer):
