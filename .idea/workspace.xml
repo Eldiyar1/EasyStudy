@@ -5,34 +5,160 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/english_backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/CarRacing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarRacing/static/background/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/ChronoCrafters.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/managers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/migrations/0002_customuser_date_of_birth_customuser_firstname_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/tokens.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/validators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/0002_alter_image_options_alter_watch_selected_options_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/0003_alter_review_rating_design_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/0004_alter_review_watch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/0005_rename_rating_design_review_design_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/paginations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/apps/watch/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/media/avatars/D200PartlySunnyV21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21_7gyGjuX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21_Th54rJm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21_WyvZJSH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21_f0GArR6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/D200PartlySunnyV21_lcbOmm0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/DSC-0567-copy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/DSC-0567-copy_hyCOWFr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/DSC-0567-copy_iY0oB6M.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/R1582-Rolex-Precision-1945-9ct-Gold-4-b-WM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/R1582-Rolex-Precision-1945-9ct-Gold-4-b-WM_TksmY9a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/d0355fba0ca0fbfadb8bf55b74b3c8fa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/d0355fba0ca0fbfadb8bf55b74b3c8fa_JPTqLMl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/d0355fba0ca0fbfadb8bf55b74b3c8fa_R054vdK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/images.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/images_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/images_egr49TK.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/media/watches/m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/development.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/jazzmin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/local.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/settings/yasg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/core/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ChronoCrafters/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parser/.idea/parser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/26533a75-cac6-4843-a2c3-f8bc7d12f138.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/48196175-1a61-48c5-a638-a1b797c29935.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/97d1f051-a049-4cc2-bbd6-c842e0bfe930.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geek 1" beforeDir="false" afterPath="$PROJECT_DIR$/../Geek 1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geek 2" beforeDir="false" afterPath="$PROJECT_DIR$/../Geek 2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geeks 3/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../Geeks 3/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geeks 3/handlers/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Geeks 3/handlers/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geeks 3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Geeks 3/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Geeks 3/parser/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Geeks 3/parser/news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/apps/food_space/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0002_alter_reservation_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0003_alter_image_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0004_alter_order_options_remove_order_menu_item_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0005_alter_order_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/migrations/0006_alter_foodspace_amenities_alter_foodspace_cuisine_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/apps/food_space/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/apps/food_space/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/apps/food_space/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/bb.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/bb.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Yummy/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env_example" beforeDir="false" afterPath="$PROJECT_DIR$/.env_example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/english_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/english_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/jazzmin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/yasg.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/yasg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/0002_alter_category_options_alter_category_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/settings/jazzmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/settings/yasg.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/yasg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/english_backend/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0002_example_grammar_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0003_alter_example_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/8.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson4.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson5.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson6.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/Lesson8.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/Lesson8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачки по питону/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/person.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,38 +185,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ACER/Eng_App/english_backend/english_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/meymanbackend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\english_backend" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app\nza" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\avatars" />
-      <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\english_backend\settings" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Django Server.english_backend">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="english_backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="english_backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -239,7 +387,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/imran" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
