@@ -1,18 +1,6 @@
 from django.db import models
 
 
-class Antonym(models.Model):
-    word = models.CharField(max_length=100)
-    antonyms = models.JSONField()
-
-    class Meta:
-        verbose_name = "Антоним"
-        verbose_name_plural = "Антонимы"
-
-    def __str__(self):
-        return self.word
-
-
 class Synonym(models.Model):
     word = models.CharField(max_length=100)
     synonym = models.JSONField()
@@ -20,6 +8,18 @@ class Synonym(models.Model):
     class Meta:
         verbose_name = "Cиноним"
         verbose_name_plural = "Синонимы"
+
+    def __str__(self):
+        return self.word
+
+
+class Antonym(models.Model):
+    word = models.CharField(max_length=100)
+    antonym = models.JSONField()
+
+    class Meta:
+        verbose_name = "Антоним"
+        verbose_name_plural = "Антонимы"
 
     def __str__(self):
         return self.word
@@ -77,6 +77,17 @@ class Chapter(models.Model):
         return self.chapter
 
 
+class Example(models.Model):
+    example = models.TextField(verbose_name='Пример: ')
+
+    class Meta:
+        verbose_name = "Пример"
+        verbose_name_plural = "Примеры"
+
+    def __str__(self):
+        return self.example
+
+
 class Subsection(models.Model):
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
 
@@ -96,7 +107,7 @@ class Question(models.Model):
     answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
     correct_answer_index = models.PositiveSmallIntegerField(
         choices=[(1, 'Answer 1'), (2, 'Answer 2'), (3, 'Answer 3'), (4, 'Answer 4')]
-        , verbose_name='Правильный ответ:')
+        , verbose_name='Прный ответ:')
 
     def incorrect_answers(self):
         return [
@@ -131,6 +142,11 @@ class Grammar(models.Model):
         verbose_name='Введите тему:')
     description = models.TextField(
         verbose_name='Введите описание темы:')
+    example = models.ForeignKey(
+        Example,
+        on_delete=models.CASCADE,
+        verbose_name='Пример: '
+    )
     test = models.ManyToManyField(Question, verbose_name='Тест')
 
     class Meta:
@@ -165,7 +181,7 @@ class Category(models.Model):
 
 
 class Word(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
     word = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:

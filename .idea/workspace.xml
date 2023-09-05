@@ -6,8 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="d01a06eb-7654-41fd-aea9-510b35ce4a00" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/english_backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/english_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/english_backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nza/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/jazzmin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/yasg.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/settings/yasg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/english_backend/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/migrations/0002_alter_category_options_alter_category_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +69,50 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend" />
+      <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app" />
+      <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app\nza" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\avatars" />
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\english_backend\settings" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mk">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="english_backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="mk" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="english_backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,6 +160,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.mk" />
       </list>
     </recent_temporary>
@@ -158,7 +217,17 @@
       <workItem from="1692163302383" duration="458000" />
       <workItem from="1692164134518" duration="20949000" />
       <workItem from="1692775523095" duration="979000" />
-      <workItem from="1692862710230" duration="320000" />
+      <workItem from="1692862710230" duration="935000" />
+      <workItem from="1692965352062" duration="99000" />
+      <workItem from="1692965656398" duration="609000" />
+      <workItem from="1692966428877" duration="735000" />
+      <workItem from="1693036243457" duration="2027000" />
+      <workItem from="1693131461446" duration="11175000" />
+      <workItem from="1693203999578" duration="17000" />
+      <workItem from="1693208040748" duration="8488000" />
+      <workItem from="1693301513161" duration="3585000" />
+      <workItem from="1693469929739" duration="4408000" />
+      <workItem from="1693566907371" duration="296000" />
     </task>
     <servers />
   </component>
@@ -177,6 +246,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/english_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1693310058943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/english_backend$mk.coverage" NAME="mk Coverage Results" MODIFIED="1691056987901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

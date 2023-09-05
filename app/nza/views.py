@@ -5,7 +5,8 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import QuoteSerializers, \
     IdiomSerializers, AntonymSerializer, \
     WordSerializer, SynonymSerializer, \
-    CategorySerializer,GrammarSerializers\
+    CategorySerializer, GrammarSerializers,\
+    ExampleSerializers
 
 from .service import *
 
@@ -36,19 +37,23 @@ class SynonymViewSet(ModelViewSet):
     def create(self, request, *args, **kwargs):
         word = request.data.get('word', '')
         synonyms = []
+
         for syn in wordnet.synsets(word):
             for lemma in syn.lemmas():
                 synonyms.append(lemma.name())
             if len(synonyms) == 4:
                 break
-        serializer = self.get_serializer(data={'word': word, 'synonym': ', '.join(synonyms[:4])})
+
+        synonym_list = [{'word': word, 'synonym': synonym} for synonym in synonyms[:4]]
+
+        serializer = self.get_serializer(data=synonym_list, many=True)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=201, headers=headers)
 
     def get_queryset(self):
-        return Synonym.objects.all()
+        return Synonym.objects.none()
 
 
 class AntonymViewSet(ModelViewSet):
@@ -56,17 +61,25 @@ class AntonymViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         word = request.data.get('word', '')
-        antonyms = AntonymService.get_antonyms(word, num_antonyms=4)
+        antonyms = []
 
-        serializer = self.get_serializer(data={'word': word, 'antonyms': antonyms[:4]})
+        for syn in wordnet.synsets(word):
+            for lemma in syn.lemmas():
+                if lemma.antonyms():
+                    antonyms.append(lemma.antonyms()[0].name())
+            if len(antonyms) == 4:
+                break
+
+        antonym_list = [{'word': word, 'antonym': antonym} for antonym in antonyms[:4]]
+
+        serializer = self.get_serializer(data=antonym_list, many=True)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-
         headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(serializer.data, status=201, headers=headers)
 
     def get_queryset(self):
-        return Antonym.objects.all()
+        return Antonym.objects.none()
 
 
 class WordTranslateViewSet(ModelViewSet):
@@ -96,6 +109,9 @@ class WordTranslateViewSet(ModelViewSet):
         Word.objects.all().delete()
         Word.objects._reset_sequence(0)
 
+class ExampleViewSet(ModelViewSet):
+    queryset = ExampleSerializers
+    serializer_class = Example.objects.all()
 
 class GrammarViewSet(ModelViewSet):
     queryset = Grammar.objects.all()
@@ -105,7 +121,6 @@ class GrammarViewSet(ModelViewSet):
         grammar = GrammarService.get_all_grammar()
         serializer = self.serializer_class(grammar, many=True)
         return Response(serializer.data)
-
 
 
 class CategoryWordViewSet(ModelViewSet):

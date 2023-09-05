@@ -23,7 +23,6 @@ class QuoteSerializers(ModelSerializer):
         fields = ['text', 'translation_text', 'author', 'translation_author']
 
 
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -46,13 +45,16 @@ class IdiomSerializers(ModelSerializer):
 class AntonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Antonym
-        fields = ('word', 'antonyms')
+        fields = ('id', 'word', 'antonym')
+        extra_kwargs = {
+            'antonym': {'required': False}
+        }
 
 
 class SynonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Synonym
-        fields = ('word', 'synonym')
+        fields = ('id', 'word', 'synonym')
         extra_kwargs = {
             'synonym': {'required': False}
         }
@@ -91,6 +93,12 @@ class ChapterSerializers(serializers.ModelSerializer):
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
+        fields = "__all__"
+
+
+class ExampleSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Example
         fields = "__all__"
 
 

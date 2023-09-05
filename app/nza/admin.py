@@ -27,6 +27,11 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ('text',)
 
 
+class ExampleAdmin(admin.ModelAdmin):
+    list_display = ('example',)
+    search_fields = ('example',)
+
+
 class GrammarAdmin(admin.ModelAdmin):
     list_display = ('title', 'chapter', 'subsection')
     list_filter = ('chapter', 'subsection')
@@ -48,6 +53,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
+admin.site.register(Example, ExampleAdmin)
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Idiom, IdiomAdmin)
 admin.site.register(Chapter, ChapterAdmin)

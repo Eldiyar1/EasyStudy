@@ -33,18 +33,6 @@ class CurrentIdiomService:
         return current_idiom.idiom
 
 
-class AntonymService:
-    @staticmethod
-    def get_antonyms(word, num_antonyms=4):
-        antonyms = []
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                if lemma.antonyms():
-                    antonyms.append(lemma.antonyms()[0].name())
-            if len(antonyms) >= num_antonyms:
-                break
-        return antonyms
-
 
 class WordTranslateService:
     @staticmethod
