@@ -14,7 +14,7 @@ services:
       - "8000:8000"
   postgresdb:
     image: 'postgres:12'
-    hostname: 'localhost'
+    hostname: 'distributor'
     environment:
       POSTGRES_DB: '${DB_NAME}'
       POSTGRES_USER: '${DB_USER}'

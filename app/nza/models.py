@@ -1,4 +1,10 @@
 from django.db import models
+import nltk
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet')
 
 
 class Synonym(models.Model):

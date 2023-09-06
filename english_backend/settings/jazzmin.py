@@ -38,14 +38,10 @@ JAZZMIN_SETTINGS = {
 # Выбрал только то что мне понравилось если что можем поменять тему
 JAZZMIN_UI_TWEAKS = {
     # белый фон:
-    "theme": "flatly",
+    # "theme": "flatly",
     # "theme" : "simplex",  # белый фон с цветами - RGB
     # "theme": "sketchy",     #  мультяшный
-
-
     # темный фон:
-    # "theme" : "darkly",
+    "theme" : "darkly",
     # "theme": "slate",    # темный (серьезный , полностью)
-
-
 }

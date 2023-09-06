@@ -119,10 +119,29 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/bb.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/bb.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dff24ad0-4b78-4519-a533-4c6ee0a39dd0/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" afterDir="false" />
@@ -153,7 +172,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -171,12 +190,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/PycharmProjects/meymanbackend",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/english_backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -197,28 +217,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Django Server.english_backend">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="english_backend" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="english_backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -356,6 +354,8 @@
       <workItem from="1693301513161" duration="3585000" />
       <workItem from="1693469929739" duration="4408000" />
       <workItem from="1693566907371" duration="296000" />
+      <workItem from="1693975425962" duration="1049000" />
+      <workItem from="1693976517418" duration="7414000" />
     </task>
     <servers />
   </component>

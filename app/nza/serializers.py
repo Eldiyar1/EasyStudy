@@ -107,6 +107,7 @@ class GrammarSerializers(serializers.ModelSerializer):
     chapter = ChapterSerializers()
     subsection = SubsectionSerializers()
 
+
     class Meta:
         model = Grammar
         fields = ('chapter', 'subsection', 'title', 'description', 'test')
