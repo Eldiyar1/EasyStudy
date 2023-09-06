@@ -119,8 +119,10 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/bb.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/bb.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../Yummy/core/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b1ff25e-dbcf-4909-aafb-975d6305c702/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/yasg.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/yasg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачки по питону/.idea/dataSources.xml" afterDir="false" />
@@ -151,7 +153,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
