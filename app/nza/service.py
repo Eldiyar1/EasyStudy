@@ -33,7 +33,6 @@ class CurrentIdiomService:
         return current_idiom.idiom
 
 
-
 class WordTranslateService:
     @staticmethod
     def get_image_url(word):
