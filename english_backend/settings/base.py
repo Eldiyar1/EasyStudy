@@ -4,7 +4,7 @@ from decouple import config
 from .jazzmin import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
