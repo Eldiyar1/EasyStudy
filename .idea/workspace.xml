@@ -65,8 +65,25 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_5zix24i.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sangriall_db.WhrrHg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sangriall_db.WhrrHg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e827bba2-56be-45eb-95ef-065350540846/storage_v2/_src_/database/sungriall_db.bhHJwA/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.name" beforeDir="false" />
@@ -123,12 +140,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/PycharmProjects/english_backend",
+    "last_opened_file_path": "D:/New folder/meymanbackend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -289,7 +307,14 @@
       <workItem from="1693566907371" duration="296000" />
       <workItem from="1693975425962" duration="1049000" />
       <workItem from="1693976517418" duration="7414000" />
-      <workItem from="1694004936894" duration="590000" />
+      <workItem from="1694004936894" duration="768000" />
+      <workItem from="1694009209888" duration="3665000" />
+      <workItem from="1694013314008" duration="437000" />
+      <workItem from="1694013919202" duration="6801000" />
+      <workItem from="1694021644492" duration="916000" />
+      <workItem from="1694023478967" duration="2399000" />
+      <workItem from="1694026831320" duration="3806000" />
+      <workItem from="1694033137189" duration="4409000" />
     </task>
     <servers />
   </component>

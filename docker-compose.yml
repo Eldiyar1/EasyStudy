@@ -1,27 +1,31 @@
 version: '3'
 services:
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: backend
+    ports:
+      - 8000:8000
     env_file:
       - .env
-    depends_on:
-      - postgresdb
-    command: python manage.py runserver 0.0.0.0:8000
-    ports:
-      - "8000:8000"
-  postgresdb:
-    image: 'postgres:12'
-    hostname: 'distributor'
-    environment:
-      POSTGRES_DB: '${DB_NAME}'
-      POSTGRES_USER: '${DB_USER}'
-      POSTGRES_PASSWORD: '${DB_PASSWORD}'
-    ports:
-      - '5432:5432'
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - db_network
     volumes:
-      - distributor-postgres-data:/var/lib/postgresql/data
+      - .:/english_backend
+  postgres-db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    networks:
+      - db_network
+
 volumes:
-  distributor-postgres-data:
+  postgres-data:
+
+networks:
+  db_network:
+    driver: bridge

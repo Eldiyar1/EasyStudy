@@ -2,13 +2,12 @@ from rest_framework.decorators import action
 from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
+from .service import *
 from .serializers import QuoteSerializers, \
     IdiomSerializers, AntonymSerializer, \
     WordSerializer, SynonymSerializer, \
     CategorySerializer, GrammarSerializers,\
     ExampleSerializers
-
-from .service import *
 
 
 class QuoteViewSet(ModelViewSet):
@@ -16,8 +15,8 @@ class QuoteViewSet(ModelViewSet):
     serializer_class = QuoteSerializers
 
     def list(self, request):
-        item = CurrentQuoteService.get_current_quote()
-        serializer = self.serializer_class(item)
+        current_quote = CurrentQuoteService.get_current()
+        serializer = self.serializer_class(current_quote)
         return Response(serializer.data)
 
 
@@ -26,8 +25,8 @@ class IdiomViewSet(ModelViewSet):
     serializer_class = IdiomSerializers
 
     def list(self, request):
-        item = CurrentIdiomService.get_current_idiom()
-        serializer = self.serializer_class(item)
+        current_idiom = CurrentIdiomService.get_current()
+        serializer = self.serializer_class(current_idiom)
         return Response(serializer.data)
 
 
