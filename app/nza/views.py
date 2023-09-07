@@ -6,7 +6,7 @@ from .service import *
 from .serializers import QuoteSerializers, \
     IdiomSerializers, AntonymSerializer, \
     WordSerializer, SynonymSerializer, \
-    CategorySerializer, GrammarSerializers,\
+    CategorySerializer, GrammarSerializers, \
     ExampleSerializers
 
 
@@ -35,15 +35,9 @@ class SynonymViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         word = request.data.get('word', '')
-        synonyms = []
+        synonyms = get_synonyms(word)
 
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                synonyms.append(lemma.name())
-            if len(synonyms) == 4:
-                break
-
-        synonym_list = [{'word': word, 'synonym': synonym} for synonym in synonyms[:4]]
+        synonym_list = [{'word': word, 'synonym': synonym} for synonym in synonyms]
 
         serializer = self.get_serializer(data=synonym_list, many=True)
         serializer.is_valid(raise_exception=True)
@@ -60,16 +54,9 @@ class AntonymViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         word = request.data.get('word', '')
-        antonyms = []
+        antonyms = get_antonyms(word)
 
-        for syn in wordnet.synsets(word):
-            for lemma in syn.lemmas():
-                if lemma.antonyms():
-                    antonyms.append(lemma.antonyms()[0].name())
-            if len(antonyms) == 4:
-                break
-
-        antonym_list = [{'word': word, 'antonym': antonym} for antonym in antonyms[:4]]
+        antonym_list = [{'word': word, 'antonym': antonym} for antonym in antonyms]
 
         serializer = self.get_serializer(data=antonym_list, many=True)
         serializer.is_valid(raise_exception=True)
@@ -102,15 +89,17 @@ class WordTranslateViewSet(ModelViewSet):
     def perform_create(self, serializer):
         last_word = Word.objects.last()
         new_id = (last_word.id + 1) if last_word else 1
-        serializer.save(id=new_id)
+        serializer.save(id=new_id, obj='новое_слово')
 
     def delete(self, request):
         Word.objects.all().delete()
         Word.objects._reset_sequence(0)
 
+
 class ExampleViewSet(ModelViewSet):
     queryset = ExampleSerializers
     serializer_class = Example.objects.all()
+
 
 class GrammarViewSet(ModelViewSet):
     queryset = Grammar.objects.all()

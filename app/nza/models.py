@@ -188,7 +188,7 @@ class Category(models.Model):
 
 class Word(models.Model):
     category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
-    word = models.CharField(max_length=100, verbose_name='Слово')
+    obj = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:
         verbose_name = "Слова"

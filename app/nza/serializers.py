@@ -3,6 +3,8 @@ from .models import *
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
 
+from .service import get_image_url, get_translation
+
 
 class QuoteSerializers(ModelSerializer):
     translation_text = serializers.SerializerMethodField()
@@ -45,7 +47,7 @@ class IdiomSerializers(ModelSerializer):
 class AntonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Antonym
-        fields = ('id', 'word', 'antonym')
+        fields = ('word', 'antonym')
         extra_kwargs = {
             'antonym': {'required': False}
         }
@@ -54,7 +56,7 @@ class AntonymSerializer(serializers.ModelSerializer):
 class SynonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Synonym
-        fields = ('id', 'word', 'synonym')
+        fields = ('word', 'synonym')
         extra_kwargs = {
             'synonym': {'required': False}
         }
@@ -107,7 +109,6 @@ class GrammarSerializers(serializers.ModelSerializer):
     chapter = ChapterSerializers()
     subsection = SubsectionSerializers()
 
-
     class Meta:
         model = Grammar
         fields = ('chapter', 'subsection', 'title', 'description', 'test')
@@ -118,14 +119,14 @@ class WordSerializer(serializers.ModelSerializer):
     translation = serializers.SerializerMethodField()
 
     def get_image_url(self, obj):
-        image_url = "https://api.unsplash.com/photos/random"
+        image_url = get_image_url(self, obj)
         return image_url
 
     def get_translation(self, obj):
         translator = Translator()
-        translation = translator.translate(obj.word, dest='ru')
-        return translation.text
+        translator.translate(obj.obj, dest='ru')
+        return translator
 
     class Meta:
         model = Word
-        fields = ['id', 'word', 'image_url', 'translation']
+        fields = ['id', 'obj', 'image_url', 'translation']

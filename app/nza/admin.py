@@ -44,8 +44,8 @@ class ListeningAdmin(admin.ModelAdmin):
 
 
 class WordAdmin(admin.ModelAdmin):
-    list_display = ('word',)
-    search_fields = ('word',)
+    list_display = ('obj',)
+    search_fields = ('obj',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

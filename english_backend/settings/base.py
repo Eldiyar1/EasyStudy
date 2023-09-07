@@ -7,6 +7,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 CORS_ALLOWED_ORIGINS = [
     "https://example.com",
     "https://sub.example.com",
@@ -16,7 +17,8 @@ CORS_ALLOWED_ORIGINS = [
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-CSRF_TRUSTED_ORIGINS = [' https://edbc-185-117-148-212.ngrok-free.app   ']
+CSRF_TRUSTED_ORIGINS = ['https://387e-109-201-165-30.ngrok-free.app']
+
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
