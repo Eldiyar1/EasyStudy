@@ -173,19 +173,7 @@ class Listening(models.Model):
     def __str__(self):
         return self.title
 
-
-class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name='Категория')
-
-    class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
-
-    def __str__(self):
-        return self.name
-
 class Word(models.Model):
-    category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
     word = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:

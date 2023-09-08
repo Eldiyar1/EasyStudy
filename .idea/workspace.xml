@@ -74,18 +74,12 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_5zix24i.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0002_remove_word_word_word_obj.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.name" beforeDir="false" />
@@ -322,7 +316,7 @@
       <workItem from="1694085774199" duration="4719000" />
       <workItem from="1694098368373" duration="7832000" />
       <workItem from="1694123602119" duration="8044000" />
-      <workItem from="1694151120800" duration="28146000" />
+      <workItem from="1694151120800" duration="30000000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Chapter, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
 from .service import WordTranslateService
@@ -22,13 +22,6 @@ class QuoteSerializers(ModelSerializer):
     class Meta:
         model = Quote
         fields = ['text', 'translation_text', 'author', 'translation_author']
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['name']
-
 
 class IdiomSerializers(ModelSerializer):
     translation = serializers.SerializerMethodField()
@@ -134,3 +127,7 @@ class WordSerializer(serializers.ModelSerializer):
         fields = ['id', 'word', 'image_url', 'translation']
 
 
+class ListeningSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Listening
+        fields = ['id', 'title', 'text']

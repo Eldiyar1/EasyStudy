@@ -1,14 +1,11 @@
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.decorators import action
 from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
-from .service import *
-from .serializers import QuoteSerializers, \
-    IdiomSerializers, AntonymSerializer, \
-    WordSerializer, SynonymSerializer, \
-    CategorySerializer, GrammarSerializers, \
-    ExampleSerializers, ChapterSerializers, SubsectionSerializers
+from .models import Quote, Idiom, Synonym, Antonym, Example, Grammar, Word, Chapter, Subsection, Listening
+from .service import CurrentQuoteService, CurrentIdiomService, get_synonyms, get_antonyms, GrammarService
+from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, WordSerializer, SynonymSerializer, \
+    GrammarSerializers, ExampleSerializers, ChapterSerializers, SubsectionSerializers, ListeningSerializer
 
 
 class QuoteViewSet(ModelViewSet):
@@ -69,7 +66,6 @@ class AntonymViewSet(ModelViewSet):
         return Antonym.objects.none()
 
 
-
 class ExampleViewSet(ModelViewSet):
     queryset = ExampleSerializers
     serializer_class = Example.objects.all()
@@ -82,17 +78,6 @@ class GrammarViewSet(ModelViewSet):
     def list(self, request, *args, **kwargs):
         grammar = GrammarService.get_all_grammar()
         serializer = self.serializer_class(grammar, many=True)
-        return Response(serializer.data)
-
-
-class CategoryWordViewSet(ModelViewSet):
-    queryset = Word.objects.all()
-    serializer_class = CategorySerializer
-
-    @action(detail=True, methods=['get'])
-    def words_by_category(self, request, pk=None):
-        words = Word.objects.filter(category=pk)
-        serializer = CategorySerializer(words, many=True)
         return Response(serializer.data)
 
 
@@ -123,6 +108,12 @@ class ChapterViewSet(ModelViewSet):
     queryset = Chapter.objects.all()
     serializer_class = ChapterSerializers
 
+
 class SubsectionViewSet(ModelViewSet):
     queryset = Subsection.objects.all()
     serializer_class = SubsectionSerializers
+
+
+class ListeningViewSet(ModelViewSet):
+    queryset = Listening.objects.all()
+    serializer_class = ListeningSerializer

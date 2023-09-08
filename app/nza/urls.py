@@ -12,6 +12,7 @@ router.register(r'synonym', SynonymViewSet, basename='synonym')
 router.register(r'grammar', GrammarViewSet, basename='grammar')
 router.register(r'chapters', ChapterViewSet)
 router.register(r'subsections', SubsectionViewSet)
+router.register(r'listening', ListeningViewSet)
 
 urlpatterns = [
     *router.urls,
