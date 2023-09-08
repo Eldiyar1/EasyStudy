@@ -2,8 +2,7 @@ from rest_framework import serializers
 from .models import *
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
-
-from .service import get_image_url, get_translation
+from .service import WordTranslateService
 
 
 class QuoteSerializers(ModelSerializer):
@@ -86,17 +85,17 @@ class QuestionSerializers(serializers.ModelSerializer):
             return obj.answer_4
 
 
-class ChapterSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Chapter
-        fields = '__all__'
-
-
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
-        fields = "__all__"
+        fields = '__all__'
 
+class ChapterSerializers(serializers.ModelSerializer):
+    subsections = SubsectionSerializers(many=True, required=False)
+
+    class Meta:
+        model = Chapter
+        fields = '__all__'
 
 class ExampleSerializers(serializers.ModelSerializer):
     class Meta:
@@ -119,14 +118,19 @@ class WordSerializer(serializers.ModelSerializer):
     translation = serializers.SerializerMethodField()
 
     def get_image_url(self, obj):
-        image_url = get_image_url(self, obj)
+        translation, image_url = self.get_translation_and_image_url(obj)
         return image_url
 
     def get_translation(self, obj):
-        translator = Translator()
-        translator.translate(obj.obj, dest='ru')
-        return translator
+        translation, _ = self.get_translation_and_image_url(obj)
+        return translation
+
+    def get_translation_and_image_url(self, obj):
+        service = WordTranslateService()
+        return service.get_image_url_and_translation(obj.word)
 
     class Meta:
         model = Word
-        fields = ['id', 'obj', 'image_url', 'translation']
+        fields = ['id', 'word', 'image_url', 'translation']
+
+

@@ -1,28 +1,9 @@
-from decouple import config
 from nltk.corpus import wordnet
 from .models import *
-import requests
-from googletrans import Translator
 from datetime import date
-from random import choice
-import os
-
-
-class BaseService:
-    model = None
-
-    @classmethod
-    def get_current(cls):
-        today = date.today()
-        current_item = cls.model.objects.filter(date=today).first()
-
-        if current_item is None:
-            items = cls.model.objects.all()
-            if items:
-                item = choice(items)
-                current_item = cls.model.objects.create(quote=item, date=today)
-
-        return current_item.quote if current_item else None
+from googletrans import Translator
+from pypexels import PyPexels
+from decouple import config
 
 
 def get_synonyms(word):
@@ -46,51 +27,21 @@ def get_antonyms(word):
     return antonyms[:4]
 
 
-def get_image_url(self, obj):
-    api_key = config('API_KEY')
-    url = 'https://api.unsplash.com/photos/random'
-    headers = {'Authorization': f'Client-ID {api_key}'}
-    params = {'query': obj}
-    response = requests.get(url, headers=headers, params=params)
-
-    if response.status_code == 200:
-        try:
-            data = response.json()
-            if 'urls' in data and 'regular' in data['urls']:
-                return data['urls']['regular']
-        except ValueError:
-            print("Ошибка: Невозможно распарсить JSON-данные")
-
-    return 'URL_ПО_УМОЛЧАНИЮ'
-
-
-def get_translation(self, obj):
-    translator = Translator()
-    translation = translator.translate(obj, dest='ru')
-    return translation.text
-class WordTranslateService:
-    @staticmethod
-    def get_image_url(self, obj):
-
-        api_key = config('API_KEY')
-        url = 'https://api.unsplash.com/photos/random'
-        headers = {'Authorization': f'Client-ID {api_key}'}
-        params = {'query': obj}
-        response = requests.get(url, headers=headers, params=params)
-        data = response.json()
-        return data['urls']['regular']
-
-
-    def get_translation(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj, dest='ru')
-        return translation.text
-
-
 class GrammarService:
     @staticmethod
     def get_all_grammar():
         return Grammar.objects.all()
+
+
+class BaseService:
+    model = None
+
+    @classmethod
+    def get_current(cls):
+        today = date.today()
+        current_item = cls.model.objects.filter(date=today).first()
+
+        return current_item.quote if current_item else None
 
 
 class CurrentQuoteService(BaseService):
@@ -99,3 +50,17 @@ class CurrentQuoteService(BaseService):
 
 class CurrentIdiomService(BaseService):
     model = CurrentIdiom
+
+class WordTranslateService:
+    @staticmethod
+    def get_image_url_and_translation(word):
+        api_key = config('API_KEY')
+        py_pexel = PyPexels(api_key=api_key)
+        search_results = py_pexel.search(query=word, per_page=1)
+        first_result = next(search_results.entries, None)
+        image_url = first_result.src['original'] if first_result else None
+
+        translator = Translator()
+        translation = translator.translate(word, dest='ru').text
+
+        return translation, image_url

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import *
 
-
 class QuoteAdmin(admin.ModelAdmin):
     list_display = ('text', 'author')
     search_fields = ('text', 'author')
@@ -13,14 +12,11 @@ class IdiomAdmin(admin.ModelAdmin):
 
 
 class ChapterAdmin(admin.ModelAdmin):
-    list_display = ('chapter',)
-    search_fields = ('chapter',)
+    pass
 
 
 class SubsectionAdmin(admin.ModelAdmin):
-    list_display = ('subsection',)
-    search_fields = ('subsection',)
-
+    pass
 
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('text', 'correct_answer_index')
@@ -44,8 +40,8 @@ class ListeningAdmin(admin.ModelAdmin):
 
 
 class WordAdmin(admin.ModelAdmin):
-    list_display = ('obj',)
-    search_fields = ('obj',)
+    list_display = ('word',)
+    search_fields = ('word',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

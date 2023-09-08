@@ -71,9 +71,8 @@ class CurrentIdiom(models.Model):
 
 
 class Chapter(models.Model):
-    chapter = models.CharField(
-        max_length=255,
-        verbose_name='Раздел')
+    chapter = models.CharField(max_length=255,verbose_name='Раздел')
+    subsections = models.ManyToManyField('Subsection', verbose_name='Подразделы')
 
     class Meta:
         verbose_name = "Раздел"
@@ -81,17 +80,6 @@ class Chapter(models.Model):
 
     def __str__(self):
         return self.chapter
-
-
-class Example(models.Model):
-    example = models.TextField(verbose_name='Пример: ')
-
-    class Meta:
-        verbose_name = "Пример"
-        verbose_name_plural = "Примеры"
-
-    def __str__(self):
-        return self.example
 
 
 class Subsection(models.Model):
@@ -103,6 +91,17 @@ class Subsection(models.Model):
 
     def __str__(self):
         return self.subsection
+
+
+class Example(models.Model):
+    example = models.TextField(verbose_name='Пример: ')
+
+    class Meta:
+        verbose_name = "Пример"
+        verbose_name_plural = "Примеры"
+
+    def __str__(self):
+        return self.example
 
 
 class Question(models.Model):
@@ -185,11 +184,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 class Word(models.Model):
     category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
-    obj = models.CharField(max_length=100, verbose_name='Слово')
+    word = models.CharField(max_length=100, verbose_name='Слово')
 
     class Meta:
         verbose_name = "Слова"
         verbose_name_plural = "Слова"
+

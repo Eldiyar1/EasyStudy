@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>957</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1043</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
       <StartupTime>1694024999</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>957</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1043</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4229,7 +4229,7 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>957</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1043</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4373,9 +4373,9 @@ false Zulu
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="286" parent="262" name="nza_word_id_seq">
-      <DasType>bigint|0s</DasType>
-      <ObjectId>16610</ObjectId>
-      <StateNumber>758</StateNumber>
+      <DasType>integer|0s</DasType>
+      <ObjectId>16703</ObjectId>
+      <StateNumber>1039</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="287" parent="262" name="auth_group">
@@ -4523,8 +4523,8 @@ false Zulu
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="311" parent="262" name="nza_word">
-      <ObjectId>16611</ObjectId>
-      <StateNumber>758</StateNumber>
+      <ObjectId>16704</ObjectId>
+      <StateNumber>1039</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -6040,60 +6040,41 @@ question_id</ColNames>
       <UnderlyingIndexId>16608</UnderlyingIndexId>
     </key>
     <column id="502" parent="311" name="id">
-      <DasType>bigint|0s</DasType>
-      <IdentityKind>by-default</IdentityKind>
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;nza_word_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>758</StateNumber>
-      <SequenceId>16610</SequenceId>
-      <TypeId>20</TypeId>
+      <StateNumber>1039</StateNumber>
+      <SequenceId>16703</SequenceId>
+      <TypeId>23</TypeId>
     </column>
-    <column id="503" parent="311" name="word">
-      <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="503" parent="311" name="category_id">
+      <DasType>integer|0s</DasType>
       <Position>2</Position>
-      <StateNumber>758</StateNumber>
+      <StateNumber>1039</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="504" parent="311" name="word">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>1039</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="504" parent="311" name="category_id">
-      <DasType>bigint|0s</DasType>
-      <Position>3</Position>
-      <StateNumber>758</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <foreign-key id="505" parent="311" name="nza_word_category_id_9bd07624_fk_nza_category_id">
-      <ColNames>category_id</ColNames>
-      <Deferrable>1</Deferrable>
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <ObjectId>16642</ObjectId>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>758</StateNumber>
-      <RefTableId>16544</RefTableId>
-      <RefTableName>nza_category</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="506" parent="311" name="nza_word_pkey">
+    <index id="505" parent="311" name="nza_word_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16614</ObjectId>
+      <ObjectId>16708</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>758</StateNumber>
+      <StateNumber>1039</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="507" parent="311" name="nza_word_category_id_9bd07624">
-      <ColNames>category_id</ColNames>
-      <ObjectId>16647</ObjectId>
-      <StateNumber>758</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="508" parent="311" name="nza_word_pkey">
+    <key id="506" parent="311" name="nza_word_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16615</ObjectId>
+      <ObjectId>16709</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>758</StateNumber>
-      <UnderlyingIndexId>16614</UnderlyingIndexId>
+      <StateNumber>1039</StateNumber>
+      <UnderlyingIndexId>16708</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
