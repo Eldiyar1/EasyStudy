@@ -1,57 +1,20 @@
 from rest_framework import serializers
-from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Chapter, Example, Grammar, Word, Listening
+from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Section, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
 from .service import WordTranslateService
 
 
-class QuoteSerializers(ModelSerializer):
-    translation_text = serializers.SerializerMethodField()
-    translation_author = serializers.SerializerMethodField()
-
-    def get_translation_text(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.text, dest='ru')
-        return translation.text
-
-    def get_translation_author(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.author, dest='ru')
-        return translation.text
-
+class SectionSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Quote
-        fields = ['text', 'translation_text', 'author', 'translation_author']
+        model = Section
+        fields = ('id', 'section')
 
-class IdiomSerializers(ModelSerializer):
-    translation = serializers.SerializerMethodField()
 
-    def get_translation(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.text, dest='ru')
-        return translation.text
-
+class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Idiom
-        fields = ['text', 'translation']
-
-
-class AntonymSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Antonym
-        fields = ('word', 'antonym')
-        extra_kwargs = {
-            'antonym': {'required': False}
-        }
-
-
-class SynonymSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Synonym
-        fields = ('word', 'synonym')
-        extra_kwargs = {
-            'synonym': {'required': False}
-        }
+        model = Subsection
+        fields = ('id', 'section_relate', 'subsection')
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -60,12 +23,15 @@ class QuestionSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('text', 'correct_answer', 'incorrect_answers')
+        fields = ('id', 'text', 'correct_answer', 'incorrect_answers')
 
     def get_incorrect_answers(self, obj):
-        incorrect_answers = [obj.answer_1, obj.answer_2, obj.answer_3, obj.answer_4, ]
-        incorrect_answers.pop(obj.correct_answer_index - 1)
-        return incorrect_answers
+        return [
+            obj.answer_1,
+            obj.answer_2,
+            obj.answer_3,
+            obj.answer_4,
+        ]
 
     def get_correct_answer(self, obj):
         if obj.correct_answer_index == 1:
@@ -78,32 +44,13 @@ class QuestionSerializers(serializers.ModelSerializer):
             return obj.answer_4
 
 
-class SubsectionSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Subsection
-        fields = '__all__'
-
-class ChapterSerializers(serializers.ModelSerializer):
-    subsections = SubsectionSerializers(many=True, required=False)
-
-    class Meta:
-        model = Chapter
-        fields = '__all__'
-
-class ExampleSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Example
-        fields = "__all__"
-
-
 class GrammarSerializers(serializers.ModelSerializer):
     test = QuestionSerializers(many=True)
-    chapter = ChapterSerializers()
     subsection = SubsectionSerializers()
 
     class Meta:
         model = Grammar
-        fields = ('chapter', 'subsection', 'title', 'description', 'test')
+        fields = ('id', 'subsection', 'description', 'test')
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -124,10 +71,60 @@ class WordSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Word
-        fields = ['id', 'word', 'image_url', 'translation']
+        fields = ('id', 'word', 'image_url', 'translation')
+
+
+class QuoteSerializers(ModelSerializer):
+    translation_text = serializers.SerializerMethodField()
+    translation_author = serializers.SerializerMethodField()
+
+    def get_translation_text(self, obj):
+        translator = Translator()
+        translation = translator.translate(obj.text, dest='ru')
+        return translation.text
+
+    def get_translation_author(self, obj):
+        translator = Translator()
+        translation = translator.translate(obj.author, dest='ru')
+        return translation.text
+
+    class Meta:
+        model = Quote
+        fields = ('id', 'text', 'translation_text', 'author', 'translation_author')
+
+
+class IdiomSerializers(ModelSerializer):
+    translation = serializers.SerializerMethodField()
+
+    def get_translation(self, obj):
+        translator = Translator()
+        translation = translator.translate(obj.text, dest='ru')
+        return translation.text
+
+    class Meta:
+        model = Idiom
+        fields = ('id', 'text', 'translation')
+
+
+class AntonymSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Antonym
+        fields = ('id', 'word', 'antonym')
+
+
+class SynonymSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Synonym
+        fields = ('id', 'word', 'synonym')
+
+
+class ExampleSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Example
+        fields = ('id', 'example')
 
 
 class ListeningSerializer(serializers.ModelSerializer):
     class Meta:
         model = Listening
-        fields = ['id', 'title', 'text']
+        fields = ('id', 'text')

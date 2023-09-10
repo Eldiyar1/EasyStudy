@@ -7,6 +7,131 @@ except LookupError:
     nltk.download('wordnet')
 
 
+class Word(models.Model):
+    word = models.CharField(max_length=100, verbose_name='Слово')
+
+    class Meta:
+        verbose_name = "1. Слово"
+        verbose_name_plural = "1. Слова"
+
+
+class Grammar(models.Model):
+    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, default=1, blank=True, null=True,
+                                   verbose_name='Подраздел')
+    title = models.CharField(max_length=200, verbose_name='Введите тему:')
+    description = models.TextField(verbose_name='Введите описание темы:')
+    example = models.ForeignKey('Example', on_delete=models.CASCADE, verbose_name='Пример:')
+    test = models.ManyToManyField('Question', verbose_name='Тест')
+
+    class Meta:
+        verbose_name = "2. Грамматика"
+        verbose_name_plural = "2. Грамматика"
+
+    def __str__(self):
+        return self.title
+
+
+class Quote(models.Model):
+    text = models.TextField(
+        max_length=255,
+        verbose_name='Введите цитату:')
+    author = models.TextField(
+        max_length=50,
+        verbose_name='Автор:')
+
+    class Meta:
+        verbose_name = "3. Цитата"
+        verbose_name_plural = "3. Цитаты"
+
+    def __str__(self):
+        return self.text
+
+
+class Idiom(models.Model):
+    text = models.TextField(
+        max_length=255,
+        verbose_name='Введите идиому')
+
+    class Meta:
+        verbose_name = "4. Идиома"
+        verbose_name_plural = "4. Идиомы"
+
+    def __str__(self):
+        return self.text
+
+
+class Listening(models.Model):
+    text = models.TextField(verbose_name='Текст')
+
+    class Meta:
+        verbose_name = "5. Аудирование"
+        verbose_name_plural = "5. Аудирование"
+
+    def __str__(self):
+        return self.text
+
+
+class Question(models.Model):
+    text = models.CharField(max_length=255, verbose_name='Текст:')
+    answer_1 = models.CharField(max_length=100, verbose_name='Ответ 1:')
+    answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
+    answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
+    answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
+    correct_answer_index = models.PositiveSmallIntegerField(
+        choices=[(1, 'Answer 1'), (2, 'Answer 2'), (3, 'Answer 3'), (4, 'Answer 4')]
+        , verbose_name='Прный ответ:')
+
+    def incorrect_answers(self):
+        return [
+            self.answer_1,
+            self.answer_2,
+            self.answer_3,
+            self.answer_4,
+        ]
+
+    class Meta:
+        verbose_name = "6. Tест"
+        verbose_name_plural = "6. Тесты"
+
+    def __str__(self):
+        return self.text
+
+
+class Example(models.Model):
+    example = models.TextField(verbose_name='Пример: ')
+
+    class Meta:
+        verbose_name = "7. Пример"
+        verbose_name_plural = "7. Примеры"
+
+    def __str__(self):
+        return self.example
+
+
+class Section(models.Model):
+    section = models.CharField(max_length=255, verbose_name='Раздел')
+
+    class Meta:
+        verbose_name = "8. Раздел"
+        verbose_name_plural = "8. Разделы"
+
+    def __str__(self):
+        return self.section
+
+
+class Subsection(models.Model):
+    section_relate = models.ForeignKey(Section, on_delete=models.CASCADE, verbose_name='Раздел',
+                                       related_name='sections')
+    subsection = models.CharField(max_length=255, verbose_name='Подраздел')
+
+    class Meta:
+        verbose_name = "9. Подраздел"
+        verbose_name_plural = "9. Подразделы"
+
+    def __str__(self):
+        return self.subsection
+
+
 class Synonym(models.Model):
     word = models.CharField(max_length=100)
     synonym = models.JSONField()
@@ -29,154 +154,3 @@ class Antonym(models.Model):
 
     def __str__(self):
         return self.word
-
-
-class Quote(models.Model):
-    text = models.TextField(
-        max_length=255,
-        verbose_name='Введите цитату:')
-    author = models.TextField(
-        max_length=50,
-        verbose_name='Автор:')
-
-    class Meta:
-        verbose_name = "Цитаты"
-        verbose_name_plural = "Цитаты"
-
-    def __str__(self):
-        return self.text
-
-
-class CurrentQuote(models.Model):
-    quote = models.ForeignKey(Quote, on_delete=models.CASCADE)
-    date = models.DateField()
-
-
-class Idiom(models.Model):
-    text = models.TextField(
-        max_length=255,
-        verbose_name='Введите идиому')
-
-    class Meta:
-        verbose_name = "Идиомы"
-        verbose_name_plural = "Идиомы"
-
-    def __str__(self):
-        return self.text
-
-
-class CurrentIdiom(models.Model):
-    idiom = models.ForeignKey(Idiom, on_delete=models.CASCADE)
-    date = models.DateField()
-
-
-class Chapter(models.Model):
-    chapter = models.CharField(max_length=255,verbose_name='Раздел')
-    subsections = models.ManyToManyField('Subsection', verbose_name='Подразделы')
-
-    class Meta:
-        verbose_name = "Раздел"
-        verbose_name_plural = "Раздел"
-
-    def __str__(self):
-        return self.chapter
-
-
-class Subsection(models.Model):
-    subsection = models.CharField(max_length=255, verbose_name='Подраздел')
-
-    class Meta:
-        verbose_name = "Подраздел"
-        verbose_name_plural = "Подраздел"
-
-    def __str__(self):
-        return self.subsection
-
-
-class Example(models.Model):
-    example = models.TextField(verbose_name='Пример: ')
-
-    class Meta:
-        verbose_name = "Пример"
-        verbose_name_plural = "Примеры"
-
-    def __str__(self):
-        return self.example
-
-
-class Question(models.Model):
-    text = models.CharField(max_length=255, verbose_name='Текст:')
-    answer_1 = models.CharField(max_length=100, verbose_name='Ответ 1:')
-    answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
-    answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
-    answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
-    correct_answer_index = models.PositiveSmallIntegerField(
-        choices=[(1, 'Answer 1'), (2, 'Answer 2'), (3, 'Answer 3'), (4, 'Answer 4')]
-        , verbose_name='Прный ответ:')
-
-    def incorrect_answers(self):
-        return [
-            self.answer_1,
-            self.answer_2,
-            self.answer_3,
-            self.answer_4,
-        ]
-
-    class Meta:
-        verbose_name = "Tест"
-        verbose_name_plural = "Тест"
-
-    def __str__(self):
-        return self.text
-
-
-class Grammar(models.Model):
-    chapter = models.ForeignKey(
-        Chapter,
-        on_delete=models.CASCADE,
-        verbose_name='Раздел')
-    subsection = models.ForeignKey(
-        Subsection,
-        on_delete=models.CASCADE,
-        default=1,
-        blank=True,
-        null=True,
-        verbose_name='Подраздел')
-    title = models.CharField(
-        max_length=200,
-        verbose_name='Введите тему:')
-    description = models.TextField(
-        verbose_name='Введите описание темы:')
-    example = models.ForeignKey(
-        Example,
-        on_delete=models.CASCADE,
-        verbose_name='Пример: '
-    )
-    test = models.ManyToManyField(Question, verbose_name='Тест')
-
-    class Meta:
-        verbose_name = "Грамматика"
-        verbose_name_plural = "Грамматика"
-
-    def __str__(self):
-        return self.title
-
-
-class Listening(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Аудирование')
-    text = models.TextField(verbose_name='Текст')
-
-    class Meta:
-        verbose_name = "Аудирование"
-        verbose_name_plural = "Аудирование"
-
-    def __str__(self):
-        return self.title
-
-class Word(models.Model):
-    word = models.CharField(max_length=100, verbose_name='Слово')
-
-    class Meta:
-        verbose_name = "Слова"
-        verbose_name_plural = "Слова"
-

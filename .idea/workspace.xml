@@ -14,6 +14,13 @@
       <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CarRacing/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../CarRacing/static/background/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f44d5d92-0cae-4610-869c-cd5ccfd36cd3/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f44d5d92-0cae-4610-869c-cd5ccfd36cd3/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f44d5d92-0cae-4610-869c-cd5ccfd36cd3/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f44d5d92-0cae-4610-869c-cd5ccfd36cd3/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/nza/migrations/0002_remove_currentquote_quote_delete_currentidiom_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" />
@@ -74,12 +81,25 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_5zix24i.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f44d5d92-0cae-4610-869c-cd5ccfd36cd3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c17685be-583e-4eec-9a2f-eef80d7d76be/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0002_chapter_subsections.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english_backend/settings/yasg.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/yasg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.name" beforeDir="false" />
@@ -136,7 +156,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/PycharmProjects/meymanbackend",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/meymanbackend/apps/travel/urls.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -316,7 +336,16 @@
       <workItem from="1694085774199" duration="4719000" />
       <workItem from="1694098368373" duration="7832000" />
       <workItem from="1694123602119" duration="8044000" />
-      <workItem from="1694151120800" duration="30000000" />
+      <workItem from="1694151120800" duration="35252000" />
+      <workItem from="1694209716840" duration="9000" />
+      <workItem from="1694247543644" duration="28000" />
+      <workItem from="1694254787518" duration="368000" />
+      <workItem from="1694255184376" duration="2269000" />
+      <workItem from="1694261468823" duration="2811000" />
+      <workItem from="1694267221428" duration="906000" />
+      <workItem from="1694271807024" duration="10162000" />
+      <workItem from="1694291261495" duration="10195000" />
+      <workItem from="1694301642108" duration="3191000" />
     </task>
     <servers />
   </component>

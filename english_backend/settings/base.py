@@ -14,10 +14,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:9000",
 ]
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-CSRF_TRUSTED_ORIGINS = ['https://387e-109-201-165-30.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://636c-212-112-111-34.ngrok-free.app/']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -116,8 +117,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,
-}

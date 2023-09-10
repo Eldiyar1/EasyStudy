@@ -1,9 +1,9 @@
 from nltk.corpus import wordnet
-from .models import *
-from datetime import date
 from googletrans import Translator
 from pypexels import PyPexels
 from decouple import config
+
+from app.nza.models import Grammar
 
 
 def get_synonyms(word):
@@ -32,24 +32,6 @@ class GrammarService:
     def get_all_grammar():
         return Grammar.objects.all()
 
-
-class BaseService:
-    model = None
-
-    @classmethod
-    def get_current(cls):
-        today = date.today()
-        current_item = cls.model.objects.filter(date=today).first()
-
-        return current_item.quote if current_item else None
-
-
-class CurrentQuoteService(BaseService):
-    model = CurrentQuote
-
-
-class CurrentIdiomService(BaseService):
-    model = CurrentIdiom
 
 class WordTranslateService:
     @staticmethod
