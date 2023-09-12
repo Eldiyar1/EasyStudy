@@ -27,11 +27,6 @@ def get_antonyms(word):
     return antonyms[:4]
 
 
-class GrammarService:
-    @staticmethod
-    def get_all_grammar():
-        return Grammar.objects.all()
-
 
 class WordTranslateService:
     @staticmethod

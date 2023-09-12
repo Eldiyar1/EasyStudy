@@ -18,7 +18,7 @@ CORS_ALLOWED_ORIGINS = [
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-CSRF_TRUSTED_ORIGINS = ['https://636c-212-112-111-34.ngrok-free.app/']
+CSRF_TRUSTED_ORIGINS = ['https://cff0-109-201-165-30.ngrok-free.app']
 
 INSTALLED_APPS = [
     'jazzmin',

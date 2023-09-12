@@ -3,7 +3,7 @@ from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from .models import Quote, Idiom, Synonym, Antonym, Example, Grammar, Word, Section, Subsection, Listening
-from .service import get_synonyms, get_antonyms, GrammarService
+from .service import get_synonyms, get_antonyms
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, WordSerializer, SynonymSerializer, \
     GrammarSerializers, ExampleSerializers, SectionSerializers, SubsectionSerializers, ListeningSerializer
 
@@ -21,11 +21,6 @@ class SubsectionViewSet(ModelViewSet):
 class GrammarViewSet(ModelViewSet):
     queryset = Grammar.objects.all()
     serializer_class = GrammarSerializers
-
-    def list(self, request, *args, **kwargs):
-        grammar = GrammarService.get_all_grammar()
-        serializer = self.serializer_class(grammar, many=True)
-        return Response(serializer.data)
 
 
 class WordTranslateViewSet(ModelViewSet):

@@ -16,8 +16,7 @@ class Word(models.Model):
 
 
 class Grammar(models.Model):
-    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, default=1, blank=True, null=True,
-                                   verbose_name='Подраздел')
+    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, verbose_name='Подраздел')
     title = models.CharField(max_length=200, verbose_name='Введите тему:')
     description = models.TextField(verbose_name='Введите описание темы:')
     example = models.ForeignKey('Example', on_delete=models.CASCADE, verbose_name='Пример:')
