@@ -43,5 +43,4 @@ JAZZMIN_UI_TWEAKS = {
     # "theme": "sketchy",     #  мультяшный
     # темный фон:
     "theme" : "darkly",
-    # "theme": "slate",    # темный (серьезный , полностью)
 }

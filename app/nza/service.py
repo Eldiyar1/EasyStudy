@@ -3,8 +3,6 @@ from googletrans import Translator
 from pypexels import PyPexels
 from decouple import config
 
-from app.nza.models import Grammar
-
 
 def get_synonyms(word):
     synonyms = []
@@ -27,13 +25,12 @@ def get_antonyms(word):
     return antonyms[:4]
 
 
-
 class WordTranslateService:
     @staticmethod
     def get_image_url_and_translation(word):
         api_key = config('API_KEY')
-        py_pexel = PyPexels(api_key=api_key)
-        search_results = py_pexel.search(query=word, per_page=1)
+        pexel = PyPexels(api_key=api_key)
+        search_results = pexel.search(query=word, per_page=1)
         first_result = next(search_results.entries, None)
         image_url = first_result.src['original'] if first_result else None
 

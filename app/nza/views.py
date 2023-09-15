@@ -2,10 +2,11 @@ from random import choice
 from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
-from .models import Quote, Idiom, Synonym, Antonym, Example, Grammar, Word, Section, Subsection, Listening
+from .models import Quote, Idiom, Synonym, Antonym, Example, Grammar, Word, Section, Subsection, Listening, Question
 from .service import get_synonyms, get_antonyms
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, WordSerializer, SynonymSerializer, \
-    GrammarSerializers, ExampleSerializers, SectionSerializers, SubsectionSerializers, ListeningSerializer
+    GrammarSerializers, ExampleSerializers, SectionSerializers, SubsectionSerializers, ListeningSerializer, \
+    QuestionSerializers
 
 
 class SectionViewSet(ModelViewSet):
@@ -21,6 +22,16 @@ class SubsectionViewSet(ModelViewSet):
 class GrammarViewSet(ModelViewSet):
     queryset = Grammar.objects.all()
     serializer_class = GrammarSerializers
+
+
+class QuestionViewSet(ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializers
+
+
+class ExampleViewSet(ModelViewSet):
+    queryset = Example.objects.all()
+    serializer_class = ExampleSerializers
 
 
 class WordTranslateViewSet(ModelViewSet):
@@ -110,11 +121,6 @@ class AntonymViewSet(ModelViewSet):
 
     def get_queryset(self):
         return Antonym.objects.none()
-
-
-class ExampleViewSet(ModelViewSet):
-    queryset = Example.objects.all()
-    serializer_class = ExampleSerializers
 
 
 class ListeningViewSet(ModelViewSet):

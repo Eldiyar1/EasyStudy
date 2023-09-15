@@ -1,10 +1,6 @@
 from django.db import models
-import nltk
 
-try:
-    nltk.data.find('corpora/wordnet')
-except LookupError:
-    nltk.download('wordnet')
+from app.nza.constants import ANSWER_CHOICES
 
 
 class Word(models.Model):
@@ -16,10 +12,10 @@ class Word(models.Model):
 
 
 class Grammar(models.Model):
-    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, verbose_name='Подраздел')
+    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Раздел')
     title = models.CharField(max_length=200, verbose_name='Введите тему:')
     description = models.TextField(verbose_name='Введите описание темы:')
-    example = models.ForeignKey('Example', on_delete=models.CASCADE, verbose_name='Пример:')
+    example = models.ManyToManyField('Example', verbose_name='Пример:')
     test = models.ManyToManyField('Question', verbose_name='Тест')
 
     class Meta:
@@ -31,12 +27,8 @@ class Grammar(models.Model):
 
 
 class Quote(models.Model):
-    text = models.TextField(
-        max_length=255,
-        verbose_name='Введите цитату:')
-    author = models.TextField(
-        max_length=50,
-        verbose_name='Автор:')
+    text = models.TextField(max_length=255, verbose_name='Введите цитату:')
+    author = models.TextField(max_length=50, verbose_name='Автор:')
 
     class Meta:
         verbose_name = "3. Цитата"
@@ -76,17 +68,7 @@ class Question(models.Model):
     answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
     answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
     answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
-    correct_answer_index = models.PositiveSmallIntegerField(
-        choices=[(1, 'Answer 1'), (2, 'Answer 2'), (3, 'Answer 3'), (4, 'Answer 4')]
-        , verbose_name='Прный ответ:')
-
-    def incorrect_answers(self):
-        return [
-            self.answer_1,
-            self.answer_2,
-            self.answer_3,
-            self.answer_4,
-        ]
+    correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES,verbose_name='Правильный ответ:')
 
     class Meta:
         verbose_name = "6. Tест"
@@ -109,6 +91,7 @@ class Example(models.Model):
 
 class Section(models.Model):
     section = models.CharField(max_length=255, verbose_name='Раздел')
+    subsection = models.ManyToManyField('Subsection', verbose_name='Подразделы')
 
     class Meta:
         verbose_name = "8. Раздел"
@@ -119,8 +102,6 @@ class Section(models.Model):
 
 
 class Subsection(models.Model):
-    section_relate = models.ForeignKey(Section, on_delete=models.CASCADE, verbose_name='Раздел',
-                                       related_name='sections')
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
 
     class Meta:

@@ -5,16 +5,22 @@ from googletrans import Translator
 from .service import WordTranslateService
 
 
+class ExampleSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Example
+        fields = ['id', 'example']
+
+
 class SectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ('id', 'section')
+        fields = ('id', 'section', 'subsection')
 
 
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
-        fields = ('id', 'section_relate', 'subsection')
+        fields = ['id', 'subsection']
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -23,15 +29,27 @@ class QuestionSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('id', 'text', 'correct_answer', 'incorrect_answers')
+        fields = ('id', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3', 'answer_4',
+                  'correct_answer_index')
+        extra_kwargs = {
+            'answer_1': {'write_only': True},
+            'answer_2': {'write_only': True},
+            'answer_3': {'write_only': True},
+            'answer_4': {'write_only': True},
+            'correct_answer_index': {'write_only': True}
+        }
 
     def get_incorrect_answers(self, obj):
-        return [
+        incorrect_answers = [
             obj.answer_1,
             obj.answer_2,
             obj.answer_3,
             obj.answer_4,
         ]
+
+        correct_answer_index = obj.correct_answer_index - 1
+        incorrect_answers.pop(correct_answer_index)
+        return incorrect_answers
 
     def get_correct_answer(self, obj):
         if obj.correct_answer_index == 1:
@@ -46,11 +64,12 @@ class QuestionSerializers(serializers.ModelSerializer):
 
 class GrammarSerializers(serializers.ModelSerializer):
     test = QuestionSerializers(many=True)
-    subsection = SubsectionSerializers()
+    section = SectionSerializers()
+    example = ExampleSerializers(many=True)
 
     class Meta:
         model = Grammar
-        fields = ('id', 'subsection', 'description', 'test')
+        fields = ['id', 'section', 'title', 'description', 'example', 'test']
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -116,12 +135,6 @@ class SynonymSerializer(serializers.ModelSerializer):
     class Meta:
         model = Synonym
         fields = ('id', 'word', 'synonym')
-
-
-class ExampleSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Example
-        fields = ('id', 'example')
 
 
 class ListeningSerializer(serializers.ModelSerializer):

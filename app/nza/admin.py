@@ -10,8 +10,7 @@ class SectionAdmin(admin.ModelAdmin):
 
 @admin.register(Subsection)
 class SubsectionAdmin(admin.ModelAdmin):
-    list_display = ('section_relate', 'subsection',)
-    list_filter = ('section_relate',)
+    list_display = ('subsection',)
     search_fields = ('subsection',)
 
 
@@ -23,8 +22,7 @@ class WordAdmin(admin.ModelAdmin):
 
 @admin.register(Grammar)
 class GrammarAdmin(admin.ModelAdmin):
-    list_display = ('title', 'subsection')
-    list_filter = ('subsection',)
+    list_display = ('title',)
     search_fields = ('title', 'description')
 
 

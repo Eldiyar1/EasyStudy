@@ -2,37 +2,49 @@ import os
 from pathlib import Path
 from .jazzmin import *
 from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-]
-
-ALLOWED_HOSTS = ['*']
-
-# Application definition
-CSRF_TRUSTED_ORIGINS = ['https://cff0-109-201-165-30.ngrok-free.app']
-
-INSTALLED_APPS = [
-    'jazzmin',
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+INSTALLED_LIBRARY = [
+    'jazzmin',
     'rest_framework',
     'drf_yasg',
-    'app.nza',
     'corsheaders'
 ]
+
+CREATE_APPS = [
+    'app.nza',
+]
+
+INSTALLED_APPS = INSTALLED_LIBRARY + CREATE_APPS + DJANGO_APPS
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://localhost:3080",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:4040",
+    'https://960c-212-112-111-34.ngrok-free.app'
+]
+
+ALLOWED_HOSTS = ['*'] + CORS_ALLOWED_ORIGINS
+
+CSRF_TRUSTED_ORIGINS = ['https://960c-212-112-111-34.ngrok-free.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,7 +90,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -100,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'Ru-en'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
