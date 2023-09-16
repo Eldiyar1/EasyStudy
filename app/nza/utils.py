@@ -32,6 +32,7 @@ def get_synonyms_and_antonyms(word):
 
     return synonyms, antonyms
 
+
 def create_synonyms_and_antonyms(request, *args, **kwargs):
     word = request.data.get('word', '')
     synonyms, antonyms = get_synonyms_and_antonyms(word)

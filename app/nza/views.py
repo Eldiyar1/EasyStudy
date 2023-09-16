@@ -86,6 +86,7 @@ class AntonymViewSet(ModelViewSet):
     def get_queryset(self):
         return Antonym.objects.none()
 
+
 class ListeningViewSet(ModelViewSet):
     queryset = Listening.objects.all()
     serializer_class = ListeningSerializer
