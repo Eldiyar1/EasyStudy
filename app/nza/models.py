@@ -39,9 +39,7 @@ class Quote(models.Model):
 
 
 class Idiom(models.Model):
-    text = models.TextField(
-        max_length=255,
-        verbose_name='Введите идиому')
+    text = models.TextField(max_length=255, verbose_name='Введите идиому')
 
     class Meta:
         verbose_name = "4. Идиома"
