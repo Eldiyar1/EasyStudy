@@ -2,7 +2,8 @@ from rest_framework import serializers
 from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Section, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
-from .service import WordTranslateService
+from .service import WordTranslateService, get_incorrect_answers as get_incorrect_answers_service, \
+    get_correct_answer as get_correct_answer_service
 
 
 class ExampleSerializers(serializers.ModelSerializer):
@@ -40,26 +41,10 @@ class QuestionSerializers(serializers.ModelSerializer):
         }
 
     def get_incorrect_answers(self, obj):
-        incorrect_answers = [
-            obj.answer_1,
-            obj.answer_2,
-            obj.answer_3,
-            obj.answer_4,
-        ]
-
-        correct_answer_index = obj.correct_answer_index - 1
-        incorrect_answers.pop(correct_answer_index)
-        return incorrect_answers
+        return get_incorrect_answers_service(obj)
 
     def get_correct_answer(self, obj):
-        if obj.correct_answer_index == 1:
-            return obj.answer_1
-        elif obj.correct_answer_index == 2:
-            return obj.answer_2
-        elif obj.correct_answer_index == 3:
-            return obj.answer_3
-        elif obj.correct_answer_index == 4:
-            return obj.answer_4
+        return get_correct_answer_service(obj)
 
 
 class GrammarSerializers(serializers.ModelSerializer):

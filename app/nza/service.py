@@ -1,28 +1,30 @@
-from nltk.corpus import wordnet
 from googletrans import Translator
 from pypexels import PyPexels
 from decouple import config
 
 
-def get_synonyms(word):
-    synonyms = []
-    for syn in wordnet.synsets(word):
-        for lemma in syn.lemmas():
-            synonyms.append(lemma.name())
-        if len(synonyms) == 4:
-            break
-    return synonyms[:4]
+def get_incorrect_answers(obj):
+    incorrect_answers = [
+        obj.answer_1,
+        obj.answer_2,
+        obj.answer_3,
+        obj.answer_4,
+    ]
+
+    correct_answer_index = obj.correct_answer_index - 1
+    incorrect_answers.pop(correct_answer_index)
+    return incorrect_answers
 
 
-def get_antonyms(word):
-    antonyms = []
-    for syn in wordnet.synsets(word):
-        for lemma in syn.lemmas():
-            if lemma.antonyms():
-                antonyms.append(lemma.antonyms()[0].name())
-        if len(antonyms) == 4:
-            break
-    return antonyms[:4]
+def get_correct_answer(obj):
+    if obj.correct_answer_index == 1:
+        return obj.answer_1
+    elif obj.correct_answer_index == 2:
+        return obj.answer_2
+    elif obj.correct_answer_index == 3:
+        return obj.answer_3
+    elif obj.correct_answer_index == 4:
+        return obj.answer_4
 
 
 class WordTranslateService:

@@ -68,7 +68,7 @@ class Question(models.Model):
     answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
     answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
     answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
-    correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES,verbose_name='Правильный ответ:')
+    correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES, verbose_name='Правильный ответ:')
 
     class Meta:
         verbose_name = "6. Tест"
