@@ -4,6 +4,7 @@ from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
 from .service import WordTranslateService, get_incorrect_answers as get_incorrect_answers_service, \
     get_correct_answer as get_correct_answer_service
+from drf_writable_nested import WritableNestedModelSerializer
 
 
 class ExampleSerializers(serializers.ModelSerializer):
@@ -15,13 +16,13 @@ class ExampleSerializers(serializers.ModelSerializer):
 class SectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ('id', 'section', 'subsection')
+        fields = ['id', 'section']
 
 
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
-        fields = ['id', 'subsection']
+        fields = ['id', 'section', 'subsection']
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -47,14 +48,10 @@ class QuestionSerializers(serializers.ModelSerializer):
         return get_correct_answer_service(obj)
 
 
-class GrammarSerializers(serializers.ModelSerializer):
-    test = QuestionSerializers(many=True)
-    section = SectionSerializers()
-    example = ExampleSerializers(many=True)
-
+class GrammarSerializers(WritableNestedModelSerializer, serializers.ModelSerializer):
     class Meta:
         model = Grammar
-        fields = ['id', 'section', 'title', 'description', 'example', 'test']
+        fields = ['id', 'section', 'subsection', 'title', 'description', 'example', 'test']
 
 
 class WordSerializer(serializers.ModelSerializer):

@@ -11,20 +11,6 @@ class Word(models.Model):
         verbose_name_plural = "1. Слова"
 
 
-class Grammar(models.Model):
-    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Раздел')
-    title = models.CharField(max_length=200, verbose_name='Введите тему:')
-    description = models.TextField(verbose_name='Введите описание темы:')
-    example = models.ManyToManyField('Example', verbose_name='Пример:')
-    test = models.ManyToManyField('Question', verbose_name='Тест')
-
-    class Meta:
-        verbose_name = "2. Грамматика"
-        verbose_name_plural = "2. Грамматика"
-
-    def __str__(self):
-        return self.title
-
 
 class Quote(models.Model):
     text = models.TextField(max_length=255, verbose_name='Введите цитату:')
@@ -87,9 +73,24 @@ class Example(models.Model):
         return self.example
 
 
+class Grammar(models.Model):
+    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Разделы')
+    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, verbose_name='Подраздел')
+    title = models.CharField(max_length=200, verbose_name='Введите тему:')
+    description = models.TextField(verbose_name='Введите описание темы:')
+    example = models.ManyToManyField('Example', verbose_name='Пример: ')
+    test = models.ManyToManyField('Question', verbose_name='Тест')
+
+    class Meta:
+        verbose_name = "2. Грамматика"
+        verbose_name_plural = "2. Грамматика"
+
+    def __str__(self):
+        return self.title
+
+
 class Section(models.Model):
     section = models.CharField(max_length=255, verbose_name='Раздел')
-    subsection = models.ManyToManyField('Subsection', verbose_name='Подразделы')
 
     class Meta:
         verbose_name = "8. Раздел"
@@ -100,6 +101,7 @@ class Section(models.Model):
 
 
 class Subsection(models.Model):
+    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Разделы')
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
 
     class Meta:
@@ -108,6 +110,7 @@ class Subsection(models.Model):
 
     def __str__(self):
         return self.subsection
+
 
 
 class Synonym(models.Model):
