@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-223.8214.51">
-    <data-source name="postgres@localhost" uuid="a9926899-f308-4569-8e07-7d9ed0e248aa">
+    <data-source name="postgres@localhost" uuid="b6a19677-503b-429a-ba65-f7831c398109">
       <database-info product="PostgreSQL" version="15.4" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.4" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

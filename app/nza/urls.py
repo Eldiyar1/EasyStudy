@@ -1,8 +1,9 @@
 from rest_framework.routers import DefaultRouter
 from .views import (
     IdiomViewSet, QuoteViewSet, WordTranslateViewSet, AntonymViewSet,
-    SynonymViewSet, GrammarViewSet, SectionViewSet, SubsectionViewSet,
-    ListeningViewSet, ExampleViewSet, QuestionViewSet
+    SynonymViewSet,
+# GrammarViewSet, SectionViewSet, SubsectionViewSet,
+    ListeningViewSet, ExampleViewSet, QuestionViewSet, SectionListViewSet, SubsectionListViewSet, GrammarListViewSet
 )
 from django.urls import path, include
 
@@ -14,10 +15,13 @@ viewsets = [
     (QuoteViewSet, 'quote'),
     (SynonymViewSet, 'synonym'),
     (AntonymViewSet, 'antonym'),
-    (SectionViewSet, 'section'),
-    (SubsectionViewSet, 'subsection'),
+    # (SectionViewSet, 'section'),
+    (SectionListViewSet, 'section_list'),
+    # (SubsectionViewSet, 'subsection'),
+    (SubsectionListViewSet, 'subsection_list'),
     (ExampleViewSet, 'example'),
-    (GrammarViewSet, 'grammar'),
+    # (GrammarViewSet, 'grammar'),
+    (GrammarListViewSet, 'grammar_list'),
     (QuestionViewSet, 'question'),
     (ListeningViewSet, 'listening'),
 ]

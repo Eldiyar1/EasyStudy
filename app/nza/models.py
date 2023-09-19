@@ -3,22 +3,6 @@ from django.db import models
 from app.nza.constants import ANSWER_CHOICES
 
 
-class Question(models.Model):
-    text = models.CharField(max_length=255, verbose_name='Текст:')
-    answer_1 = models.CharField(max_length=100, verbose_name='Ответ 1:')
-    answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
-    answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
-    answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
-    correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES, verbose_name='Правильный ответ:')
-
-    class Meta:
-        verbose_name = "1. Tест"
-        verbose_name_plural = "1. Тесты"
-
-    def __str__(self):
-        return self.text
-
-
 class Example(models.Model):
     example = models.TextField(verbose_name='Пример: ')
 
@@ -54,12 +38,10 @@ class Subsection(models.Model):
 
 
 class Grammar(models.Model):
-    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Разделы')
-    subsection = models.ForeignKey('Subsection', on_delete=models.CASCADE, verbose_name='Подраздел')
     title = models.CharField(max_length=200, verbose_name='Введите тему:')
     description = models.TextField(verbose_name='Введите описание темы:')
-    example = models.ForeignKey(Example, on_delete=models.CASCADE, verbose_name='Пример: ')
-    test = models.ManyToManyField(Question, verbose_name='Тест')
+    subsection = models.ForeignKey(Subsection, on_delete=models.DO_NOTHING, related_name="grammar")
+    example = models.ForeignKey(Example, on_delete=models.CASCADE, verbose_name='Пример: ', related_name="grammar")
 
     class Meta:
         verbose_name = "5. Грамматика"
@@ -67,6 +49,23 @@ class Grammar(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Question(models.Model):
+    text = models.CharField(max_length=255, verbose_name='Текст:')
+    answer_1 = models.CharField(max_length=100, verbose_name='Ответ 1:')
+    answer_2 = models.CharField(max_length=100, verbose_name='Ответ 2:')
+    answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
+    answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
+    correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES, verbose_name='Правильный ответ:')
+    grammar = models.ForeignKey(Grammar, on_delete=models.DO_NOTHING, related_name="question")
+
+    class Meta:
+        verbose_name = "1. Tест"
+        verbose_name_plural = "1. Тесты"
+
+    def __str__(self):
+        return self.text
 
 
 class Word(models.Model):

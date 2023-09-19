@@ -3,6 +3,12 @@ from pypexels import PyPexels
 from decouple import config
 
 
+def translate_text(text):
+    translator = Translator()
+    translation = translator.translate(text, dest='ru')
+    return translation.text
+
+
 def get_incorrect_answers(obj):
     incorrect_answers = [
         obj.answer_1,

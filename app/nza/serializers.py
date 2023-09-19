@@ -3,8 +3,7 @@ from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Sectio
 from rest_framework.serializers import ModelSerializer
 from googletrans import Translator
 from .service import WordTranslateService, get_incorrect_answers as get_incorrect_answers_service, \
-    get_correct_answer as get_correct_answer_service
-from drf_writable_nested import WritableNestedModelSerializer
+    get_correct_answer as get_correct_answer_service, translate_text
 
 
 class ExampleSerializers(serializers.ModelSerializer):
@@ -13,28 +12,16 @@ class ExampleSerializers(serializers.ModelSerializer):
         fields = ['id', 'example']
 
 
-class SubsectionSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Subsection
-        fields = ['id', 'subsection', 'section']
-
-
-class SectionSerializers(serializers.ModelSerializer):
-    subsection = SubsectionSerializers(many=True, read_only=True)
-
-    class Meta:
-        model = Section
-        fields = ['id', 'section', 'subsection']
-
-
 class QuestionSerializers(serializers.ModelSerializer):
     incorrect_answers = serializers.SerializerMethodField()
     correct_answer = serializers.SerializerMethodField()
 
     class Meta:
         model = Question
-        fields = ('id', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3', 'answer_4',
-                  'correct_answer_index')
+        fields = (
+            'id', 'grammar', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3',
+            'answer_4',
+            'correct_answer_index')
         extra_kwargs = {
             'answer_1': {'write_only': True},
             'answer_2': {'write_only': True},
@@ -50,26 +37,49 @@ class QuestionSerializers(serializers.ModelSerializer):
         return get_correct_answer_service(obj)
 
 
-class GrammarSerializers(WritableNestedModelSerializer, serializers.ModelSerializer):
-    def to_representation(self, instance):
-        representation = super().to_representation(instance)
-        subsection_representation = {
-            'id_subsection': instance.subsection.id,
-            'subsection': instance.subsection.subsection
-        }
-        section_representation = {
-            'id_section': instance.section.id,
-            'section': instance.section.section
-        }
-        representation.update(section_representation)
-        representation.update(subsection_representation)
-        return representation
+class GrammarListSerializers(serializers.ModelSerializer):
+    question = QuestionSerializers(many=True, read_only=True)
 
     class Meta:
         model = Grammar
-        fields = ['id', 'section', 'subsection', 'title',
-                  'description', 'example', 'test']
+        fields = ['id', 'title', 'description', 'example', 'question']
 
+
+class GrammarSerializers(serializers.ModelSerializer):
+    example = ExampleSerializers()
+
+    class Meta:
+        model = Grammar
+        fields = ['id', 'title', 'description', 'example']
+
+
+class SubsectionListSerializers(serializers.ModelSerializer):
+    grammar = GrammarSerializers(many=True, read_only=True)
+    example = ExampleSerializers(many=True, read_only=True)
+
+    class Meta:
+        model = Subsection
+        fields = ['id', 'subsection', 'grammar', 'example']
+
+
+class SubsectionSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Subsection
+        fields = ['id', 'subsection']
+
+
+class SectionSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Section
+        fields = ['id', 'section', 'subsection']
+
+
+class SectionListSerializers(serializers.ModelSerializer):
+    subsection = SubsectionSerializers(many=True, read_only=True)
+
+    class Meta:
+        model = Section
+        fields = ['id', 'section', 'subsection']
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -98,14 +108,10 @@ class QuoteSerializers(ModelSerializer):
     translation_author = serializers.SerializerMethodField()
 
     def get_translation_text(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.text, dest='ru')
-        return translation.text
+        return translate_text(obj.text)
 
     def get_translation_author(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.author, dest='ru')
-        return translation.text
+        return translate_text(obj.author)
 
     class Meta:
         model = Quote
@@ -115,10 +121,8 @@ class QuoteSerializers(ModelSerializer):
 class IdiomSerializers(ModelSerializer):
     translation = serializers.SerializerMethodField()
 
-    def get_translation(self, obj):
-        translator = Translator()
-        translation = translator.translate(obj.text, dest='ru')
-        return translation.text
+    def get_translation_text(self, obj):
+        return translate_text(obj.text)
 
     class Meta:
         model = Idiom
