@@ -73,17 +73,8 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_5zix24i.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reqiurements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.name" beforeDir="false" />
@@ -146,7 +137,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -260,8 +251,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.mk" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -390,7 +381,7 @@
       <workItem from="1695065269302" duration="5367000" />
       <workItem from="1695074845581" duration="2266000" />
       <workItem from="1695099020160" duration="802000" />
-      <workItem from="1695115493672" duration="6842000" />
+      <workItem from="1695115493672" duration="7596000" />
     </task>
     <servers />
   </component>
