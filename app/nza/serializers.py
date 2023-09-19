@@ -13,15 +13,17 @@ class ExampleSerializers(serializers.ModelSerializer):
         fields = ['id', 'example']
 
 
-class SectionSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Section
-        fields = ['id', 'section']
-
-
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
+        fields = ['id', 'subsection', 'section']
+
+
+class SectionSerializers(serializers.ModelSerializer):
+    subsection = SubsectionSerializers(many=True, read_only=True)
+
+    class Meta:
+        model = Section
         fields = ['id', 'section', 'subsection']
 
 
@@ -49,9 +51,25 @@ class QuestionSerializers(serializers.ModelSerializer):
 
 
 class GrammarSerializers(WritableNestedModelSerializer, serializers.ModelSerializer):
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        subsection_representation = {
+            'id_subsection': instance.subsection.id,
+            'subsection': instance.subsection.subsection
+        }
+        section_representation = {
+            'id_section': instance.section.id,
+            'section': instance.section.section
+        }
+        representation.update(section_representation)
+        representation.update(subsection_representation)
+        return representation
+
     class Meta:
         model = Grammar
-        fields = ['id', 'section', 'subsection', 'title', 'description', 'example', 'test']
+        fields = ['id', 'section', 'subsection', 'title',
+                  'description', 'example', 'test']
+
 
 
 class WordSerializer(serializers.ModelSerializer):

@@ -73,30 +73,17 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_5zix24i.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/caf52ba2-db72-496e-9872-d9294c4e458b/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0002_remove_currentquote_quote_delete_currentidiom_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0003_alter_grammar_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0004_remove_subsection_section_relate_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0005_alter_section_section_relate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0006_remove_section_section_relate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0007_grammar_section.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0008_section_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0009_alter_section_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0010_alter_section_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0011_remove_section_subsection_section_subsections.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0012_remove_grammar_example_grammar_example.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0013_remove_grammar_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0014_rename_subsections_section_subsection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0015_alter_question_correct_answer_index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/migrations/0016_alter_section_subsection.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/nza/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/nza/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reqiurements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../fd/Eldiyar_26-3_hw8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачки по питону/.idea/.name" beforeDir="false" />
@@ -147,27 +134,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Geek 1/test.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/meymanbackend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ACER\Eng_App\english_backend\english_backend\app" />
@@ -401,7 +388,9 @@
       <workItem from="1695041605201" duration="1260000" />
       <workItem from="1695049304648" duration="3531000" />
       <workItem from="1695065269302" duration="5367000" />
-      <workItem from="1695074845581" duration="1613000" />
+      <workItem from="1695074845581" duration="2266000" />
+      <workItem from="1695099020160" duration="802000" />
+      <workItem from="1695115493672" duration="6842000" />
     </task>
     <servers />
   </component>

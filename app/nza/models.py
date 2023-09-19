@@ -11,7 +11,6 @@ class Word(models.Model):
         verbose_name_plural = "1. Слова"
 
 
-
 class Quote(models.Model):
     text = models.TextField(max_length=255, verbose_name='Введите цитату:')
     author = models.TextField(max_length=50, verbose_name='Автор:')
@@ -101,8 +100,8 @@ class Section(models.Model):
 
 
 class Subsection(models.Model):
-    section = models.ForeignKey('Section', on_delete=models.CASCADE, verbose_name='Разделы')
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
+    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection")
 
     class Meta:
         verbose_name = "9. Подраздел"
@@ -110,7 +109,6 @@ class Subsection(models.Model):
 
     def __str__(self):
         return self.subsection
-
 
 
 class Synonym(models.Model):
