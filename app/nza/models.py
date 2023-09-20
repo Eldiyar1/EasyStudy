@@ -27,7 +27,7 @@ class Section(models.Model):
 
 class Subsection(models.Model):
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
-    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection", null=True, blank=True)
+    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection", verbose_name='Раздел')
 
     class Meta:
         verbose_name = "4. Подраздел"
@@ -40,8 +40,9 @@ class Subsection(models.Model):
 class Grammar(models.Model):
     title = models.CharField(max_length=200, verbose_name='Введите тему:')
     description = models.TextField(verbose_name='Введите описание темы:')
-    subsection = models.ForeignKey(Subsection, on_delete=models.DO_NOTHING, related_name="grammar")
-    example = models.ForeignKey(Example, on_delete=models.CASCADE, verbose_name='Пример: ', related_name="grammar")
+    subsection = models.ForeignKey(Subsection, on_delete=models.DO_NOTHING, related_name="grammar",
+                                   verbose_name='Подраздел')
+    example = models.ForeignKey(Example, on_delete=models.DO_NOTHING, related_name="grammar", verbose_name='Пример')
 
     class Meta:
         verbose_name = "5. Грамматика"
@@ -58,7 +59,8 @@ class Question(models.Model):
     answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
     answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
     correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES, verbose_name='Правильный ответ:')
-    grammar = models.ForeignKey(Grammar, on_delete=models.DO_NOTHING, related_name="question")
+    grammar = models.ForeignKey(Grammar, on_delete=models.DO_NOTHING, related_name="question",
+                                verbose_name='Грамматика')
 
     class Meta:
         verbose_name = "1. Tест"
@@ -77,7 +79,7 @@ class Word(models.Model):
 
 
 class Idiom(models.Model):
-    text = models.TextField(max_length=255, verbose_name='Введите идиому')
+    text = models.TextField(max_length=255, verbose_name='Введите идиому:')
 
     class Meta:
         verbose_name = "7. Идиома"

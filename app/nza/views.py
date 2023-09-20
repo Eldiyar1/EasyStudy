@@ -28,11 +28,6 @@ class QuestionViewSet(ModelViewSet):
     serializer_class = QuestionSerializers
 
 
-class ExampleViewSet(ModelViewSet):
-    queryset = Example.objects.all()
-    serializer_class = ExampleSerializers
-
-
 class WordTranslateViewSet(ModelViewSet):
     queryset = Word.objects.all()
     serializer_class = WordSerializer

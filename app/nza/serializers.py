@@ -9,9 +9,6 @@ class ExampleSerializers(serializers.ModelSerializer):
     class Meta:
         model = Example
         fields = ['id', 'example']
-        # extra_kwargs = {
-        #     'grammar': {'write_only': True},
-        # }
 
 
 class QuestionSerializers(serializers.ModelSerializer):
