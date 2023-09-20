@@ -1,47 +1,34 @@
 JAZZMIN_SETTINGS = {
-    # Исправим смотря на тз
-    "site_title": "Site",     # Заголовок сайта
-    "site_header": "Simon",   # Заголовок на экране входа
-    "site_brand": "Django administrations",     # Выходит на сайте вместо Django-admin.(Администрирование сайта)
-    "welcome_sign": "Welcome to the my work",   # Приветственный текст на экране входа
-    "copyright": "NZA",     # Авторское право (footer)
-    "search_model": ["auth.User", "auth.Group"],    # Для поиска пользователей или группы
+    "site_title": "EZ Study",
+    "site_header": "EZ Study",
+    "site_brand": "EZ Study",
+    "welcome_sign": "Welcome to EZ Study",
+    "copyright": "EZ Study",
+    "search_model": ["auth.User", "auth.Group"],
 
 
-    # Header (пока только базовые вещи исправим смотря на тз)
     "topmenu_links": [
-
-        # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
-
-        # external url that opens in a new window (Permissions can be added)
-        # telega
-        {"name": "Support", "url": "https://t.me/Abdykadyrov_S", "new_window": True},
-
-        # model admin to link to (Permissions checked against model)
+        {"name": "EZ Study", "url": "home", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
-
-        # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "books"},
     ],
-
-
     "show_sidebar": True,
-
+    "navigation_expanded": True,
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "users.User": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "admin.LogEntry": "fas fa-file",
+    },
+    "default_icon_parents": "fas fa-circle",
+    "default_icon_children": "fas fa-dot-circle",
     "changeform_format": "horizontal_tabs",
-
-
+    "changeform_format_overrides": {
+        "auth.user": "collapsible",
+        "auth.group": "vertical_tabs",
+    },
 }
 
-
-
-# Выбрал только то что мне понравилось если что можем поменять тему
 JAZZMIN_UI_TWEAKS = {
-    # белый фон:
-    # "theme": "flatly",
-    # "theme" : "simplex",  # белый фон с цветами - RGB
-    # "theme": "sketchy",     #  мультяшный
-    # темный фон:
     "theme" : "darkly",
-    # "theme": "slate",    # темный (серьезный , полностью)
 }
