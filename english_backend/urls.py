@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from .settings.swagger import urlpatterns_swagger as doc_urls
+from .settings.swagger import urlpatterns as doc_urls
 
 urlpatterns = [
                   path('admin/', admin.site.urls),

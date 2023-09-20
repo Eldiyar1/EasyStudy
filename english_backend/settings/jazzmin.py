@@ -6,7 +6,6 @@ JAZZMIN_SETTINGS = {
     "copyright": "EZ Study",
     "search_model": ["auth.User", "auth.Group"],
 
-
     "topmenu_links": [
         {"name": "EZ Study", "url": "home", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
@@ -30,5 +29,5 @@ JAZZMIN_SETTINGS = {
 }
 
 JAZZMIN_UI_TWEAKS = {
-    "theme" : "darkly",
+    "theme": "darkly",
 }
