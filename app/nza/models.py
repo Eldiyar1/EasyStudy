@@ -5,7 +5,7 @@ from app.nza.constants import ANSWER_CHOICES
 
 class Example(models.Model):
     example = models.TextField(verbose_name='Пример: ')
-    grammar = models.ForeignKey('Grammar', on_delete=models.CASCADE, related_name="example")
+    grammar = models.ForeignKey('Grammar', on_delete=models.DO_NOTHING, related_name="example")
 
     class Meta:
         verbose_name = "1. Пример"
