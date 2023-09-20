@@ -7,8 +7,8 @@ class Example(models.Model):
     example = models.TextField(verbose_name='Пример: ')
 
     class Meta:
-        verbose_name = "2. Пример"
-        verbose_name_plural = "2. Примеры"
+        verbose_name = "1. Пример"
+        verbose_name_plural = "1. Примеры"
 
     def __str__(self):
         return self.example
@@ -18,8 +18,8 @@ class Section(models.Model):
     section = models.CharField(max_length=255, verbose_name='Раздел')
 
     class Meta:
-        verbose_name = "3. Раздел"
-        verbose_name_plural = "3. Разделы"
+        verbose_name = "2. Раздел"
+        verbose_name_plural = "2. Разделы"
 
     def __str__(self):
         return self.section
@@ -30,8 +30,8 @@ class Subsection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection", verbose_name='Раздел')
 
     class Meta:
-        verbose_name = "4. Подраздел"
-        verbose_name_plural = "4. Подразделы"
+        verbose_name = "3. Подраздел"
+        verbose_name_plural = "3. Подразделы"
 
     def __str__(self):
         return self.subsection
@@ -45,8 +45,8 @@ class Grammar(models.Model):
     example = models.ForeignKey(Example, on_delete=models.DO_NOTHING, related_name="grammar", verbose_name='Пример')
 
     class Meta:
-        verbose_name = "5. Грамматика"
-        verbose_name_plural = "5. Грамматика"
+        verbose_name = "4. Грамматика"
+        verbose_name_plural = "4. Грамматика"
 
     def __str__(self):
         return self.title
@@ -63,8 +63,8 @@ class Question(models.Model):
                                 verbose_name='Грамматика')
 
     class Meta:
-        verbose_name = "1. Tест"
-        verbose_name_plural = "1. Тесты"
+        verbose_name = "5. Tест"
+        verbose_name_plural = "5. Тесты"
 
     def __str__(self):
         return self.text
