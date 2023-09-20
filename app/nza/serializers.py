@@ -1,3 +1,4 @@
+from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Section, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
@@ -6,9 +7,13 @@ from .service import WordTranslateService, get_incorrect_answers as get_incorrec
 
 
 class ExampleSerializers(serializers.ModelSerializer):
+    grammar_id = serializers.PrimaryKeyRelatedField(
+        queryset=Grammar.objects.all(), source='grammar', write_only=True, required=False
+    )
+
     class Meta:
         model = Example
-        fields = ['id', 'example']
+        fields = ['id', 'grammar_id', 'example']
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -18,7 +23,7 @@ class QuestionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ('id', 'grammar', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3',
-            'answer_4', 'correct_answer_index')
+                  'answer_4', 'correct_answer_index')
         extra_kwargs = {
             'grammar': {'write_only': True},
             'answer_1': {'write_only': True},
@@ -35,9 +40,9 @@ class QuestionSerializers(serializers.ModelSerializer):
         return get_correct_answer_service(obj)
 
 
-class GrammarListSerializers(serializers.ModelSerializer):
+class GrammarListSerializers(WritableNestedModelSerializer, serializers.ModelSerializer):
     question = QuestionSerializers(many=True, read_only=True)
-    example = ExampleSerializers()
+    example = ExampleSerializers(many=True, read_only=True)
 
     class Meta:
         model = Grammar
@@ -48,7 +53,7 @@ class GrammarListSerializers(serializers.ModelSerializer):
 
 
 class GrammarSerializers(serializers.ModelSerializer):
-    example = ExampleSerializers()
+    example = ExampleSerializers(many=True, read_only=True)
 
     class Meta:
         model = Grammar

@@ -40,7 +40,7 @@ class WordTranslateService:
         pexel = PyPexels(api_key=api_key)
         search_results = pexel.search(query=word, per_page=1)
         first_result = next(search_results.entries, None)
-        image_url = first_result.src['original'] if first_result else None
+        image_url = first_result.src['medium'] if first_result else None
 
         translator = Translator()
         translation = translator.translate(word, dest='ru').text

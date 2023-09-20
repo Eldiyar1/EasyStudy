@@ -4,8 +4,8 @@ from .models import Quote, Idiom, Synonym, Antonym, Example, Grammar, Word, Sect
 from .utils import get_word_translation_and_image_url, \
     perform_word_creation, get_random_idiom_or_quote, create_synonyms_and_antonyms
 from .serializers import QuoteSerializers, IdiomSerializers, AntonymSerializer, WordSerializer, SynonymSerializer, \
-    ExampleSerializers, ListeningSerializer, QuestionSerializers, GrammarListSerializers, SubsectionListSerializers, SectionListSerializers
-
+    ExampleSerializers, ListeningSerializer, QuestionSerializers, GrammarListSerializers, SubsectionListSerializers, \
+    SectionListSerializers
 
 
 class SectionListViewSet(ModelViewSet):
@@ -26,6 +26,11 @@ class GrammarListViewSet(ModelViewSet):
 class QuestionViewSet(ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializers
+
+
+class ExampleViewSet(ModelViewSet):
+    queryset = Example.objects.all()
+    serializer_class = ExampleSerializers
 
 
 class WordTranslateViewSet(ModelViewSet):
