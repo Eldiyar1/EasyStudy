@@ -44,7 +44,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ALLOWED_HOSTS = ['*'] + CORS_ALLOWED_ORIGINS
 
-CSRF_TRUSTED_ORIGINS = ['https://d0c6-212-112-111-34.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://b6a4-212-112-111-34.ngrok-free.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,12 +81,8 @@ WSGI_APPLICATION = 'english_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

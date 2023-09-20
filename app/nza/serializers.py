@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Section, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
-from googletrans import Translator
 from .service import WordTranslateService, get_incorrect_answers as get_incorrect_answers_service, \
     get_correct_answer as get_correct_answer_service, translate_text
 
@@ -10,6 +9,9 @@ class ExampleSerializers(serializers.ModelSerializer):
     class Meta:
         model = Example
         fields = ['id', 'example']
+        # extra_kwargs = {
+        #     'grammar': {'write_only': True},
+        # }
 
 
 class QuestionSerializers(serializers.ModelSerializer):
@@ -18,11 +20,10 @@ class QuestionSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = (
-            'id', 'grammar', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3',
-            'answer_4',
-            'correct_answer_index')
+        fields = ('id', 'grammar', 'text', 'correct_answer', 'incorrect_answers', 'answer_1', 'answer_2', 'answer_3',
+            'answer_4', 'correct_answer_index')
         extra_kwargs = {
+            'grammar': {'write_only': True},
             'answer_1': {'write_only': True},
             'answer_2': {'write_only': True},
             'answer_3': {'write_only': True},
@@ -39,10 +40,14 @@ class QuestionSerializers(serializers.ModelSerializer):
 
 class GrammarListSerializers(serializers.ModelSerializer):
     question = QuestionSerializers(many=True, read_only=True)
+    example = ExampleSerializers()
 
     class Meta:
         model = Grammar
-        fields = ['id', 'title', 'description', 'example', 'question']
+        fields = ['id', 'subsection', 'title', 'description', 'example', 'question']
+        extra_kwargs = {
+            'subsection': {'write_only': True},
+        }
 
 
 class GrammarSerializers(serializers.ModelSerializer):
@@ -59,19 +64,16 @@ class SubsectionListSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Subsection
-        fields = ['id', 'subsection', 'grammar', 'example']
+        fields = ['id', 'section', 'subsection', 'grammar', 'example']
+        extra_kwargs = {
+            'section': {'write_only': True},
+        }
 
 
 class SubsectionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Subsection
         fields = ['id', 'subsection']
-
-
-class SectionSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Section
-        fields = ['id', 'section', 'subsection']
 
 
 class SectionListSerializers(serializers.ModelSerializer):
@@ -121,7 +123,7 @@ class QuoteSerializers(ModelSerializer):
 class IdiomSerializers(ModelSerializer):
     translation = serializers.SerializerMethodField()
 
-    def get_translation_text(self, obj):
+    def get_translation(self, obj):
         return translate_text(obj.text)
 
     class Meta:

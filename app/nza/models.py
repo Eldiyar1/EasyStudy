@@ -27,7 +27,7 @@ class Section(models.Model):
 
 class Subsection(models.Model):
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
-    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection")
+    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection", null=True, blank=True)
 
     class Meta:
         verbose_name = "4. Подраздел"
