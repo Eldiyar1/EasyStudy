@@ -40,11 +40,13 @@ def create_synonyms_and_antonyms(request, *args, **kwargs):
     synonym_list = [{'word': word, 'synonym': synonym} for synonym in synonyms]
     antonym_list = [{'word': word, 'antonym': antonym} for antonym in antonyms]
 
+    synonym_dict = [{'synonym': s} for s in synonym_list]
+    antonym_dict = [{'antonym': a} for a in antonym_list]
+
     Synonym.objects.bulk_create([Synonym(**data) for data in synonym_list])
     Antonym.objects.bulk_create([Antonym(**data) for data in antonym_list])
 
-    return synonyms, antonyms
-
+    return synonym_dict, antonym_dict
 
 def get_word_translation_and_image_url(serializer):
     instance = serializer.instance
