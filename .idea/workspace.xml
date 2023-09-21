@@ -74,6 +74,7 @@
       <change beforePath="$PROJECT_DIR$/../Yummy/media/profile_pics/rick-and-morty-run-the-jewels-vector-graphics-wallpaper-preview_bhsSW40.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Yummy/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nza/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/nza/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/jazzmin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/settings/swagger.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/settings/swagger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/english_backend/urls.py" afterDir="false" />
@@ -391,7 +392,7 @@
       <workItem from="1695210274988" duration="3883000" />
       <workItem from="1695221585694" duration="2270000" />
       <workItem from="1695226624185" duration="6241000" />
-      <workItem from="1695244343402" duration="488000" />
+      <workItem from="1695244343402" duration="1186000" />
     </task>
     <servers />
   </component>
