@@ -7,18 +7,9 @@ JAZZMIN_SETTINGS = {
     "search_model": ["auth.User", "auth.Group"],
 
     "topmenu_links": [
-        {"name": "EZ Study", "url": "home", "permissions": ["auth.view_user"]},
+        {"name": "Home", "url": "home", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
     ],
-    "show_sidebar": True,
-    "navigation_expanded": True,
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "users.User": "fas fa-user",
-        "auth.Group": "fas fa-users",
-        "admin.LogEntry": "fas fa-file",
-    },
     "default_icon_parents": "fas fa-circle",
     "default_icon_children": "fas fa-dot-circle",
     "changeform_format": "horizontal_tabs",
@@ -29,5 +20,27 @@ JAZZMIN_SETTINGS = {
 }
 
 JAZZMIN_UI_TWEAKS = {
+    "brand_colour": "navbar-primary",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "navbar_fixed": True,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": True,
+    "sidebar_disable_expand": True,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_legacy_style": True,
+    "sidebar_nav_flat_style": True,
     "theme": "darkly",
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-primary",
+    },
 }
+
