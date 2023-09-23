@@ -4,12 +4,15 @@ JAZZMIN_SETTINGS = {
     "site_brand": "EZ Study",
     "welcome_sign": "Welcome to EZ Study",
     "copyright": "EZ Study",
-    "search_model": ["auth.User", "auth.Group"],
+    "search_model": ["auth.User", "auth.Group", "nza.Grammar"],
 
     "topmenu_links": [
-        {"name": "Home", "url": "home", "permissions": ["auth.view_user"]},
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"app": "nza"},
         {"model": "auth.User"},
+        {"name": "Support", "url": "https://t.me/elldiyar", "new_window": True},
     ],
+
     "default_icon_parents": "fas fa-circle",
     "default_icon_children": "fas fa-dot-circle",
     "changeform_format": "horizontal_tabs",
@@ -43,4 +46,3 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-primary",
     },
 }
-
