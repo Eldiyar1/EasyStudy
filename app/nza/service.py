@@ -2,40 +2,29 @@ from googletrans import Translator
 from pypexels import PyPexels
 from decouple import config
 
+from app.nza.constants import DESTINATION_LANGUAGE
+
 
 def translate_text(text):
     translator = Translator()
-    translation = translator.translate(text, dest='ru')
+    translation = translator.translate(text, dest=DESTINATION_LANGUAGE)
     return translation.text
 
 
 def get_incorrect_answers(obj):
-    incorrect_answers = [
-        obj.answer_1,
-        obj.answer_2,
-        obj.answer_3,
-        obj.answer_4,
-    ]
-
-    correct_answer_index = obj.correct_answer_index - 1
-    incorrect_answers.pop(correct_answer_index)
+    incorrect_answers = [getattr(obj, f'answer_{i}') for i in range(1, 5)]
+    incorrect_answers.pop(obj.correct_answer_index - 1)
     return incorrect_answers
 
 
 def get_correct_answer(obj):
-    if obj.correct_answer_index == 1:
-        return obj.answer_1
-    elif obj.correct_answer_index == 2:
-        return obj.answer_2
-    elif obj.correct_answer_index == 3:
-        return obj.answer_3
-    elif obj.correct_answer_index == 4:
-        return obj.answer_4
+    answers = {1: obj.answer_1, 2: obj.answer_2, 3: obj.answer_3, 4: obj.answer_4}
+    return answers.get(obj.correct_answer_index)
 
 
 class WordTranslateService:
     @staticmethod
-    def get_image_url_and_translation(word):
+    def get_image_url_and_translation(word, destination_language=DESTINATION_LANGUAGE):
         api_key = config('API_KEY')
         pexel = PyPexels(api_key=api_key)
         search_results = pexel.search(query=word, per_page=1)
@@ -43,6 +32,6 @@ class WordTranslateService:
         image_url = first_result.src['medium'] if first_result else None
 
         translator = Translator()
-        translation = translator.translate(word, dest='ru').text
+        translation = translator.translate(word, dest=destination_language).text
 
         return translation, image_url

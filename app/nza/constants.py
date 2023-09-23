@@ -4,3 +4,5 @@ ANSWER_CHOICES = [
     (3, 'Answer 3'),
     (4, 'Answer 4'),
 ]
+
+DESTINATION_LANGUAGE = 'ru'

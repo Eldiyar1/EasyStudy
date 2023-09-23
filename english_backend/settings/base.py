@@ -44,7 +44,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ALLOWED_HOSTS = ['*'] + CORS_ALLOWED_ORIGINS
 
-CSRF_TRUSTED_ORIGINS = ['https://d197-212-112-111-34.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://499a-212-112-111-34.ngrok-free.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,23 +79,23 @@ WSGI_APPLICATION = 'english_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': config('DB_ENGINE'),
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
