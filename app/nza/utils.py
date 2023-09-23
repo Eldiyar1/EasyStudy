@@ -42,6 +42,7 @@ def create_synonyms_and_antonyms(request, *args, **kwargs):
 
     return synonym_list, antonym_list
 
+
 def get_word_translation_and_image_url(serializer):
     instance = serializer.instance
     word_translation, image_url = serializer.get_translation_and_image_url(instance)

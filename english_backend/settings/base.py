@@ -44,7 +44,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ALLOWED_HOSTS = ['*'] + CORS_ALLOWED_ORIGINS
 
-CSRF_TRUSTED_ORIGINS = ['https://d2cf-212-112-111-34.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://7675-212-112-111-34.ngrok-free.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

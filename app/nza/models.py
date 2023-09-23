@@ -115,8 +115,8 @@ class Listening(models.Model):
 
 
 class Synonym(models.Model):
-    word = models.CharField(max_length=100)
-    synonym = models.JSONField()
+    word = models.CharField(max_length=100, verbose_name='Слово')
+    synonym = models.CharField(max_length=100, verbose_name='Синоним')
 
     class Meta:
         verbose_name = "Cиноним"
@@ -127,8 +127,8 @@ class Synonym(models.Model):
 
 
 class Antonym(models.Model):
-    word = models.CharField(max_length=100)
-    antonym = models.JSONField()
+    word = models.CharField(max_length=100, verbose_name='Слово')
+    antonym = models.CharField(max_length=100, verbose_name='Антоним')
 
     class Meta:
         verbose_name = "Антоним"

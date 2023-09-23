@@ -136,12 +136,16 @@ class IdiomSerializers(ModelSerializer):
 
 
 class AntonymSerializer(serializers.ModelSerializer):
+    antonym = serializers.ReadOnlyField()
+
     class Meta:
         model = Antonym
         fields = ('id', 'word', 'antonym')
 
 
 class SynonymSerializer(serializers.ModelSerializer):
+    synonym = serializers.ReadOnlyField()
+
     class Meta:
         model = Synonym
         fields = ('id', 'word', 'synonym')
