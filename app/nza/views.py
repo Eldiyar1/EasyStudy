@@ -53,15 +53,15 @@ class QuoteViewSet(ModelViewSet):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializers
 
-    def list(self, request):
-        return get_random_idiom_or_quote(self.queryset, self.serializer_class, "Пожалуйста добавьте цитаты")
+    def list(self, request, *args, **kwargs):
+        return get_random_idiom_or_quote(self.queryset, self.serializer_class, "Пожалуйста добавьте цитату")
 
 
 class IdiomViewSet(ModelViewSet):
     queryset = Idiom.objects.all()
     serializer_class = IdiomSerializers
 
-    def list(self, request):
+    def list(self, request, *args, **kwargs):
         return get_random_idiom_or_quote(self.queryset, self.serializer_class, "Пожалуйста добавьте идиому")
 
 

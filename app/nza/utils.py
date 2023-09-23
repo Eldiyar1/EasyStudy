@@ -2,7 +2,7 @@ from nltk.corpus import wordnet
 from random import choice
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Word, Synonym, Antonym
+from .models import Word
 
 
 def get_random_idiom_or_quote(queryset, serializer_class, error_message):
