@@ -3,24 +3,12 @@ from django.db import models
 from app.nza.constants import ANSWER_CHOICES
 
 
-class Example(models.Model):
-    example = models.TextField(verbose_name='Пример: ')
-    grammar = models.ForeignKey('Grammar', on_delete=models.DO_NOTHING, related_name="example")
-
-    class Meta:
-        verbose_name = "1. Пример"
-        verbose_name_plural = "1. Примеры"
-
-    def __str__(self):
-        return self.example
-
-
 class Section(models.Model):
     section = models.CharField(max_length=255, verbose_name='Раздел')
 
     class Meta:
-        verbose_name = "2. Раздел"
-        verbose_name_plural = "2. Разделы"
+        verbose_name = "1. Раздел"
+        verbose_name_plural = "1. Разделы"
 
     def __str__(self):
         return self.section
@@ -28,11 +16,12 @@ class Section(models.Model):
 
 class Subsection(models.Model):
     subsection = models.CharField(max_length=255, verbose_name='Подраздел')
-    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, related_name="subsection", verbose_name='Раздел')
+    section = models.ForeignKey(Section, on_delete=models.SET_NULL, null=True, related_name="subsection",
+                                verbose_name='Раздел')
 
     class Meta:
-        verbose_name = "3. Подраздел"
-        verbose_name_plural = "3. Подразделы"
+        verbose_name = "2. Подраздел"
+        verbose_name_plural = "2. Подразделы"
 
     def __str__(self):
         return self.subsection
@@ -41,15 +30,28 @@ class Subsection(models.Model):
 class Grammar(models.Model):
     title = models.CharField(max_length=200, verbose_name='Введите тему:')
     description = models.TextField(verbose_name='Введите описание темы:')
-    subsection = models.ForeignKey(Subsection, on_delete=models.DO_NOTHING, related_name="grammar",
+    subsection = models.ForeignKey(Subsection, on_delete=models.SET_NULL, null=True, related_name="grammar",
                                    verbose_name='Подраздел')
 
     class Meta:
-        verbose_name = "4. Грамматика"
-        verbose_name_plural = "4. Грамматика"
+        verbose_name = "3. Грамматика"
+        verbose_name_plural = "3. Грамматика"
 
     def __str__(self):
         return self.title
+
+
+class Example(models.Model):
+    example = models.TextField(verbose_name='Пример: ')
+    grammar = models.ForeignKey('Grammar', on_delete=models.SET_NULL, null=True, related_name="example",
+                                verbose_name='Грамматика')
+
+    class Meta:
+        verbose_name = "4. Пример"
+        verbose_name_plural = "4. Примеры"
+
+    def __str__(self):
+        return self.example
 
 
 class Question(models.Model):
@@ -59,7 +61,7 @@ class Question(models.Model):
     answer_3 = models.CharField(max_length=100, verbose_name='Ответ 3:')
     answer_4 = models.CharField(max_length=100, verbose_name='Ответ 4:')
     correct_answer_index = models.PositiveSmallIntegerField(choices=ANSWER_CHOICES, verbose_name='Правильный ответ:')
-    grammar = models.ForeignKey(Grammar, on_delete=models.DO_NOTHING, related_name="question",
+    grammar = models.ForeignKey(Grammar, on_delete=models.SET_NULL, null=True, related_name="question",
                                 verbose_name='Грамматика')
 
     class Meta:
