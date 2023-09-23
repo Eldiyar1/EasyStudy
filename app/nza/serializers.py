@@ -33,10 +33,12 @@ class QuestionSerializers(serializers.ModelSerializer):
             'correct_answer_index': {'write_only': True}
         }
 
-    def get_incorrect_answers(self, obj):
+    @staticmethod
+    def get_incorrect_answers(obj):
         return get_incorrect_answers_service(obj)
 
-    def get_correct_answer(self, obj):
+    @staticmethod
+    def get_correct_answer(obj):
         return get_correct_answer_service(obj)
 
 
