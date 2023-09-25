@@ -12,7 +12,7 @@ JAZZMIN_SETTINGS = {
         {"model": "auth.User"},
         {"name": "Support", "url": "https://t.me/elldiyar", "new_window": True},
     ],
-
+    "show_sidebar": True,
     "default_icon_parents": "fas fa-circle",
     "default_icon_children": "fas fa-dot-circle",
     "changeform_format": "horizontal_tabs",
