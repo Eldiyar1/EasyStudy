@@ -14,7 +14,7 @@ def get_random_idiom_or_quote(queryset, serializer_class, error_message):
         return Response({"Ошибка": error_message})
 
 
-def get_synonyms_and_antonyms(word):
+def get_synonyms_and_antonyms(word, limit=4):
     synonyms = []
     antonyms = []
 
@@ -24,13 +24,10 @@ def get_synonyms_and_antonyms(word):
             if lemma.antonyms():
                 antonyms.append(lemma.antonyms()[0].name())
 
-        if len(synonyms) >= 4 and len(antonyms) >= 4:
+        if len(synonyms) >= limit and len(antonyms) >= limit:
             break
 
-    synonyms = synonyms[:4]
-    antonyms = antonyms[:4]
-
-    return synonyms, antonyms
+    return synonyms[:limit], antonyms[:limit]
 
 
 def create_synonyms_and_antonyms(request, *args, **kwargs):
