@@ -1,6 +1,11 @@
+import nltk
 from django.db import models
 
 from app.nza.constants import ANSWER_CHOICES
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet')
 
 
 class Section(models.Model):

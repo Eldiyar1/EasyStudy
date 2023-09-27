@@ -1,17 +1,7 @@
 from nltk.corpus import wordnet
-from random import choice
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Word
-
-
-def get_random_idiom_or_quote(queryset, serializer_class, error_message):
-    if queryset:
-        item = choice(queryset)
-        serializer = serializer_class(item)
-        return Response(serializer.data)
-    else:
-        return Response({"Ошибка": error_message})
 
 
 def get_synonyms_and_antonyms(word, limit=4):
