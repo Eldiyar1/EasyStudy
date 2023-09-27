@@ -2,6 +2,7 @@ import nltk
 from django.db import models
 
 from app.nza.constants import ANSWER_CHOICES
+
 try:
     nltk.data.find('corpora/wordnet')
 except LookupError:
@@ -48,7 +49,7 @@ class Grammar(models.Model):
 
 class Example(models.Model):
     example = models.TextField(verbose_name='Пример: ')
-    grammar = models.ForeignKey('Grammar', on_delete=models.SET_NULL, null=True, related_name="example",
+    grammar = models.ForeignKey(Grammar, on_delete=models.SET_NULL, null=True, related_name="example",
                                 verbose_name='Грамматика')
 
     class Meta:

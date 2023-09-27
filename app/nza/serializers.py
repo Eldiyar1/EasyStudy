@@ -7,12 +7,9 @@ from .service import WordTranslateService, get_incorrect_answers as get_incorrec
 
 
 class ExampleSerializers(serializers.ModelSerializer):
-    grammar_id = serializers.PrimaryKeyRelatedField(
-        queryset=Grammar.objects.all(), source='grammar', write_only=True)
-
     class Meta:
         model = Example
-        fields = ['id', 'grammar_id', 'example']
+        fields = ['id', 'grammar', 'example']
 
 
 class QuestionSerializers(serializers.ModelSerializer):
