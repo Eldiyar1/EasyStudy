@@ -99,7 +99,8 @@ class WordSerializer(serializers.ModelSerializer):
         translation, _ = self.get_translation_and_image_url(obj)
         return translation
 
-    def get_translation_and_image_url(self, obj):
+    @staticmethod
+    def get_translation_and_image_url(obj):
         service = WordTranslateService()
         return service.get_image_url_and_translation(obj.word)
 
@@ -112,10 +113,12 @@ class QuoteSerializers(ModelSerializer):
     translation_text = serializers.SerializerMethodField()
     translation_author = serializers.SerializerMethodField()
 
-    def get_translation_text(self, obj):
+    @staticmethod
+    def get_translation_text(obj):
         return translate_text(obj.text)
 
-    def get_translation_author(self, obj):
+    @staticmethod
+    def get_translation_author(obj):
         return translate_text(obj.author)
 
     class Meta:
@@ -126,7 +129,8 @@ class QuoteSerializers(ModelSerializer):
 class IdiomSerializers(ModelSerializer):
     translation = serializers.SerializerMethodField()
 
-    def get_translation(self, obj):
+    @staticmethod
+    def get_translation(obj):
         return translate_text(obj.text)
 
     class Meta:
