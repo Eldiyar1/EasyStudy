@@ -13,8 +13,8 @@ viewsets = [
     (AntonymViewSet, 'antonym'),
     (SectionListViewSet, 'section_list'),
     (SubsectionListViewSet, 'subsection_list'),
-    (ExampleViewSet, 'example'),
     (GrammarListViewSet, 'grammar_list'),
+    (ExampleViewSet, 'example'),
     (QuestionViewSet, 'question'),
     (ListeningViewSet, 'listening'),
 ]

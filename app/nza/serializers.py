@@ -1,4 +1,3 @@
-from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 from .models import Quote, Idiom, Antonym, Synonym, Question, Subsection, Section, Example, Grammar, Word, Listening
 from rest_framework.serializers import ModelSerializer
@@ -38,7 +37,7 @@ class QuestionSerializers(serializers.ModelSerializer):
         return get_correct_answer_service(obj)
 
 
-class GrammarListSerializers(WritableNestedModelSerializer, serializers.ModelSerializer):
+class GrammarListSerializers(serializers.ModelSerializer):
     question = QuestionSerializers(many=True, read_only=True)
     example = ExampleSerializers(many=True, read_only=True)
 

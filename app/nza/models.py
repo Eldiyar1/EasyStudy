@@ -87,7 +87,7 @@ class Word(models.Model):
 
 
 class Idiom(models.Model):
-    text = models.TextField(max_length=255, verbose_name='Введите идиому:')
+    text = models.CharField(max_length=255, verbose_name='Введите идиому:')
 
     class Meta:
         verbose_name = "7. Идиома"
@@ -98,8 +98,8 @@ class Idiom(models.Model):
 
 
 class Quote(models.Model):
-    text = models.TextField(max_length=255, verbose_name='Введите цитату:')
-    author = models.TextField(max_length=50, verbose_name='Автор:')
+    text = models.CharField(max_length=255, verbose_name='Введите цитату:')
+    author = models.CharField(max_length=50, verbose_name='Автор:')
 
     class Meta:
         verbose_name = "8. Цитата"
